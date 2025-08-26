@@ -1,0 +1,2695 @@
+<!DOCTYPE html>
+<html lang="cz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>King House Travel — Elegantní zájezdy a odpočinek</title>
+  <meta name="description" content="Exkluzivní cesty, wellness a city-breaky. King House Travel — Brno, Czechia." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    :root{
+      --primary:#0b1220; --primary-90:#0b1220e6; --accent:#d4af37;
+      --text:#e6e9f2; --muted:#aab2c5; --bg:transparent; --bg-soft:rgba(255,255,255,.06);
+      --shadow:0 8px 24px rgba(2,6,23,.12); --radius:14px; --tr:all .25s ease;
+      --glass: rgba(255,255,255,.06);
+      --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
+      --font-display: 'Playfair Display', serif;
+      --text-sm: clamp(0.875rem, 1.5vw, 1rem);
+      --text-base: clamp(1rem, 2vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 2.5vw, 1.25rem);
+      --text-xl: clamp(1.25rem, 3vw, 1.5rem);
+      --text-2xl: clamp(1.5rem, 4vw, 2rem);
+      --text-3xl: clamp(1.875rem, 5vw, 2.5rem);
+      --text-4xl: clamp(2.25rem, 6vw, 3rem);
+    }
+    *{box-sizing:border-box} html,body{height:100%}
+    body{margin:0;font-family:var(--font-primary);color:var(--text);background:var(--bg);line-height:1.55;overflow-x:hidden}
+    a{color:inherit;text-decoration:none} img{max-width:100%;display:block}
+    .container{width:min(1200px,92%);margin-inline:auto}
+    
+    /* PARTICLES BACKGROUND */
+    #particles-js{
+      position:fixed; inset:0; width:100%; height:100%;
+      background:#0b1220; z-index:-1;
+    }
+    
+    /* NAVBAR */
+    .navbar{position:sticky;top:0;z-index:1000;backdrop-filter:saturate(180%) blur(8px);background:rgba(11,18,32,.75);color:#fff;transition:transform .35s ease, box-shadow .25s ease;border-bottom:1px solid rgba(212,175,55,.15)}
+    .navbar--hidden{transform:translateY(-100%)} .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand-badge{width:44px;height:44px;border-radius:50%;overflow:hidden;display:grid;place-items:center;background:var(--accent);box-shadow:0 4px 12px rgba(212,175,55,.35)}
+    .brand-badge img{width:100%;height:100%;object-fit:cover}
+    .brand-title{font-weight:700;font-size:1.15rem;letter-spacing:.2px;color:#fff;font-family:var(--font-display)}
+    .nav-links{display:flex;gap:26px;align-items:center}
+    .nav-links a{color:#fff;font-weight:600;font-size:.98rem;opacity:.95;position:relative;padding:6px 0}
+    .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--accent);transition:width .25s}
+    .nav-links a:hover::after{width:100%}
+    .nav-links a.active{color:var(--accent)}
+    .lang-switch{display:flex;gap:8px;align-items:center}
+    .lang-btn{width:34px;height:34px;border-radius:999px;border:1px solid rgba(212,175,55,.55);color:#fff;background:transparent;display:grid;place-items:center;font-size:.78rem;cursor:pointer;transition:var(--tr)}
+    .lang-btn.active,.lang-btn:hover{background:var(--accent);color:var(--primary)}
+    .icon-btn{width:40px;height:40px;border-radius:999px;border:1px solid rgba(212,175,55,.45);background:transparent;color:#fff;display:grid;place-items:center;cursor:pointer;transition:var(--tr)}
+    .icon-btn:hover{background:var(--accent);color:var(--primary)}
+    .cart{position:relative}.cart-badge{position:absolute;top:-6px;right:-6px;width:18px;height:18px;border-radius:999px;background:var(--accent);color:var(--primary);font-size:.7rem;font-weight:800;display:grid;place-items:center}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}.hamburger span{width:26px;height:2px;background:#fff;transition:var(--tr)}
+    .hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)} .hamburger.active span:nth-child(2){opacity:0} .hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    
+    /* Mobile menu */
+    .mobile-menu{position:fixed;inset:0 auto 0 0;width:min(86vw,360px);background:var(--primary-90);color:#fff;transform:translateX(-105%);transition:transform .35s;z-index:999;padding:18px 18px 24px;border-right:1px solid rgba(212,175,55,.35);backdrop-filter:blur(6px)}
+    .mobile-menu.active{transform:none}
+    .mobile-menu .mm-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+    .mobile-menu .mm-links{display:flex;flex-direction:column;gap:14px;margin:14px 0 22px}
+    .mobile-menu .mm-links a{font-weight:600;font-size:1.02rem}
+    .mm-contact{display:grid;gap:10px;background:#0f1830;padding:14px;border-radius:12px;border:1px solid rgba(212,175,55,.2)}
+    .mm-social{display:flex;gap:10px}
+    .dim{position:fixed;inset:0;background:rgba(0,0,0,.35);backdrop-filter:blur(1px);opacity:0;visibility:hidden;transition:var(--tr);z-index:998}
+    .dim.show{opacity:1;visibility:visible}
+    
+    /* HERO */
+    .hero{position:relative;min-height:72svh;display:grid;place-items:center;text-align:center;color:#fff;padding:36px 0;background:linear-gradient(rgba(11,18,32,0.7), rgba(11,18,32,0.7)), url('https://images.unsplash.com/photo-1503220317375-aaad61436b1b?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat}
+    .hero h1{font-size:var(--text-4xl);line-height:1.12;margin:0 0 14px;font-family:var(--font-display)}
+    .hero p{font-size:var(--text-xl);color:#d7dcef;margin:0 0 22px}
+    .cta-row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:999px;font-weight:600;transition:var(--tr);border:2px solid var(--accent);background:var(--accent);color:var(--primary);cursor:pointer;position:relative;overflow:hidden;z-index:1}
+    .btn::before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(255,255,255,0.1);transform:translateX(-100%);transition:transform 0.3s ease;z-index:-1}
+    .btn:hover::before{transform:translateX(0)}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(212,175,55,.25)}
+    .btn.ghost{background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));color:#fff;border:1.5px solid rgba(212,175,55,.55);box-shadow:0 10px 24px rgba(212,175,55,.18);backdrop-filter:blur(6px)}
+    .btn.ghost:hover{background:rgba(212,175,55,.2);border-color:var(--accent)}
+    .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:28px}
+    .stat{background:var(--glass);border:1px solid rgba(212,175,55,.25);border-radius:12px;padding:14px}
+    .stat .n{color:var(--accent);font-weight:800;font-size:clamp(20px,3.5vw,30px)}
+    
+    /* SECTIONS */
+    section{padding:70px 0}
+    .section-head{text-align:center;margin-bottom:30px}
+    .section-head h2{font-size:var(--text-3xl);margin:0;color:#fff;font-family:var(--font-display)}
+    .bar{width:78px;height:4px;background:var(--accent);border-radius:999px;margin:12px auto 10px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+    .grid-1{display:grid;grid-template-columns:1fr;gap:18px}
+    .card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:transform .25s, box-shadow .25s;height:100%;display:flex;flex-direction:column;color:#e8ecf8}
+    .card:hover{transform:translateY(-6px);box-shadow:0 16px 36px rgba(2,6,23,.16)}
+    .card .media{height:200px;background:#16233c center/cover no-repeat}
+    .card .body{padding:18px;display:flex;flex-direction:column;gap:10px;flex:1}
+    .muted{color:#b6bfd6}
+    .blog .media{height:210px}.blog .title{font-weight:800;font-size:1.15rem;color:#fff}
+    
+    /* TOUR DETAILS */
+    .tour-details {
+      margin-top: 12px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 12px;
+    }
+    .tour-includes, .tour-excludes {
+      margin-bottom: 12px;
+    }
+    .tour-includes h4, .tour-excludes h4 {
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+      color: var(--accent);
+    }
+    .tour-includes ul, .tour-excludes ul {
+      margin: 0;
+      padding-left: 20px;
+      font-size: 0.85rem;
+    }
+    .tour-includes li, .tour-excludes li {
+      margin-bottom: 4px;
+    }
+    
+    /* CONTACT */
+    .contact-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:28px}
+    .info-block{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:20px;color:#e8ecf8}
+    .contact-item{display:flex;gap:12px;align-items:flex-start;padding:12px 0}
+    .contact-item .icon{width:42px;height:42px;border-radius:10px;background:var(--accent);color:var(--primary);display:grid;place-items:center;flex:0 0 42px;box-shadow:0 6px 16px rgba(212,175,55,.3)}
+    .socials{display:flex;gap:10px;margin-top:10px}
+    .socials a{width:42px;height:42px;border-radius:999px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.25);background:transparent;transition:var(--tr);color:#fff}
+    .socials a:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 8px 18px rgba(212,175,55,.22)}
+    .contact-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    .contact-actions .btn {
+      flex: 1;
+      justify-content: center;
+    }
+    .form{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);color:#fff}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    label{font-weight:600;font-size:.92rem}
+    input,select,textarea{width:100%;padding:12px 13px;border-radius:10px;border:1px solid rgba(255,255,255,.25);background:transparent;color:#fff;outline:none;font:inherit;transition:var(--tr)}
+    textarea{min-height:120px;resize:vertical}
+    input::placeholder,textarea::placeholder{color:#aab2c5}
+    input:focus,select:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(212,175,55,.12)}
+    .submit{margin-top:10px}
+    
+    /* FOOTER */
+    footer{background:rgba(11,18,32,.85);color:#cbd5e1;padding:44px 0;border-top:1px solid rgba(212,175,55,.15)}
+    .f-top{display:grid;grid-template-columns:1.1fr .9fr .9fr;gap:22px;align-items:start}
+    .f-brand{display:flex;align-items:center;gap:12px}
+    .f-links a{display:block;padding:6px 0;opacity:.9}
+    .f-links a:hover{color:#fff}
+    .company-info {
+      margin-top: 15px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .copy{margin-top:16px;text-align:center;font-size:.9rem;color:#9aa3b2}
+    
+    /* CHATBOT */
+    .chat-fab{position:fixed;right:18px;bottom:18px;width:56px;height:56px;border-radius:999px;background:var(--accent);color:var(--primary);display:grid;place-items:center;box-shadow:0 12px 26px rgba(212,175,55,.35);cursor:pointer;z-index:1001}
+    .chat-panel{position:fixed;right:18px;bottom:86px;width:min(92vw,380px);max-height:78vh;display:flex;flex-direction:column;border:1px solid rgba(255,255,255,.2);border-radius:16px;background:rgba(17,25,43,.98);color:#e8ecf8;box-shadow:var(--shadow);overflow:hidden;transform:translateY(20px);opacity:0;visibility:hidden;transition:var(--tr);z-index:1001}
+    .chat-panel.show{transform:none;opacity:1;visibility:visible}
+    .chat-head{background:rgba(11,18,32,.9);color:#fff;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.15)}
+    .chat-body{padding:14px;overflow:auto;display:grid;gap:10px}
+    .chat-steps{display: flex; flex-direction: column; gap: 15px;}
+    .chat-step{display: none; flex-direction: column; gap: 10px;}
+    .chat-step.active{display: flex;}
+    .step-nav{display: flex; justify-content: space-between; margin-top: 10px;}
+    .success-message{text-align: center; padding: 20px 0;}
+    .success-message i{font-size: 3rem; color: var(--accent); margin-bottom: 15px;}
+    
+    /* MODALS (checkout) */
+    .modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.45);opacity:0;visibility:hidden;transition:var(--tr);z-index:1002;padding:14px}
+    .modal.show{opacity:1;visibility:visible}
+    .modal-card{width:min(720px,92vw);background:rgba(17,25,43,.98);border:1px solid rgba(255,255,255,.2);border-radius:16px;box-shadow:var(--shadow);overflow:hidden;color:#e8ecf8}
+    .modal-head{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:rgba(11,18,32,.9);color:#fff;border-bottom:1px solid rgba(255,255,255,.15)}
+    .modal-body{padding:16px}
+    .pay-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
+    .pay-box{border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:14px;background:rgba(255,255,255,.04)}
+    .inline{display:flex;gap:10px}
+    .qr{width:120px;height:120px;background:#0f1830;border-radius:10px;display:grid;place-items:center;border:1px dashed rgba(255,255,255,.25);color:#7f8bad}
+    .badge{padding:4px 8px;border-radius:8px;background:#0f1830;font-size:.78rem;color:#cbd5e1;border:1px solid rgba(255,255,255,.18)}
+    
+    /* MUSIC TIP */
+    .music-tip{position:fixed;left:50%;transform:translateX(-50%);bottom:18px;background:rgba(0,0,0,.7);color:#fff;padding:10px 14px;border-radius:999px;display:none;z-index:1100}
+    .music-tip.show{display:block}
+    
+    /* MUSIC BUTTON */
+    .music-btn {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--primary);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+      z-index: 1001;
+      transition: all 0.3s ease;
+    }
+    .music-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 16px rgba(212, 175, 55, 0.6);
+    }
+    .music-btn i {
+      font-size: 20px;
+    }
+    
+    /* GOLDEN MOUSE TRAIL */
+    .mouse-trail {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.8) 0%, rgba(212, 175, 55, 0) 70%);
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: opacity 0.2s ease;
+    }
+    
+    /* TRANSLATE WIDGET */
+    .translate-widget {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(11, 18, 32, 0.8);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 8px;
+      padding: 10px;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .translate-widget select {
+      background: var(--primary);
+      color: var(--text);
+      border: 1px solid var(--accent);
+      padding: 5px;
+      border-radius: 4px;
+      font-family: inherit;
+      cursor: pointer;
+    }
+    .translate-widget i {
+      color: var(--accent);
+    }
+    
+    /* WELLNESS SECTION */
+    .wellness-section {
+      background: rgba(11, 18, 32, 0.5);
+      border-radius: 20px;
+      padding: 30px;
+      margin: 40px 0;
+    }
+    .wellness-intro {
+      margin-bottom: 30px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+    .disclaimer {
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--muted);
+      margin-top: 15px;
+    }
+    .wellness-program .program-features {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .wellness-program .program-features li {
+      padding: 5px 0;
+      padding-left: 20px;
+      position: relative;
+    }
+    .wellness-program .program-features li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+    .program-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+    }
+    
+    /* PARTNERS SECTION */
+    .partners-section {
+      padding: 50px 0;
+    }
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    .partner-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .partner-card:hover {
+      transform: translateY(-5px);
+    }
+    .partner-logo {
+      padding: 20px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.03);
+    }
+    .partner-logo img {
+      max-height: 60px;
+      margin: 0 auto;
+    }
+    .partner-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    .partner-gallery img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+    }
+    
+    /* FAQ SECTION */
+    .faq-section {
+      background: rgba(11, 18, 32, 0.5);
+      border-radius: 20px;
+      padding: 30px;
+      margin: 40px 0;
+    }
+    .faq-accordion {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      margin-bottom: 15px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      background: rgba(255, 255, 255, 0.05);
+      border: none;
+      padding: 15px 20px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s ease;
+    }
+    .faq-question:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .faq-question i {
+      transition: transform 0.3s ease;
+    }
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .faq-answer p {
+      padding: 15px 20px;
+      margin: 0;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+    }
+    
+    /* NEWSLETTER SECTION */
+    .newsletter-section {
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(11, 18, 32, 0.7));
+      border-radius: 20px;
+      padding: 40px;
+      margin: 40px 0;
+    }
+    .newsletter-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .newsletter-benefits {
+      display: grid;
+      gap: 15px;
+      margin: 20px 0;
+    }
+    .benefit-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .benefit-item i {
+      color: var(--accent);
+    }
+    .newsletter-form {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 25px;
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group.checkbox {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .form-group.checkbox input {
+      width: auto;
+      margin-top: 3px;
+    }
+    .newsletter-message {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .success-message {
+      background: rgba(81, 207, 102, 0.2);
+      color: #51cf66;
+      border: 1px solid rgba(81, 207, 102, 0.3);
+    }
+    .error-message {
+      background: rgba(255, 107, 107, 0.2);
+      color: #ff6b6b;
+      border: 1px solid rgba(255, 107, 107, 0.3);
+    }
+    
+    /* SOCIAL PROOF SECTION */
+    .social-proof-section {
+      padding: 50px 0;
+    }
+    .social-tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+      gap: 10px;
+    }
+    .tab-btn {
+      padding: 10px 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 30px;
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .tab-btn.active {
+      background: var(--accent);
+      color: var(--primary);
+      border-color: var(--accent);
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .instagram-grid, .tiktok-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .instagram-post, .tiktok-video {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .post-media, .video-thumbnail {
+      position: relative;
+      height: 200px;
+    }
+    .post-media img, .video-thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .post-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: flex-end;
+      padding: 15px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .instagram-post:hover .post-overlay {
+      opacity: 1;
+    }
+    .post-stats {
+      display: flex;
+      gap: 15px;
+      color: #fff;
+    }
+    .post-content {
+      padding: 15px;
+    }
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+    }
+    .map-container {
+      position: relative;
+      height: 500px;
+      border-radius: 15px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .map-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    .map-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .map-pins {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .map-pin {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border-radius: 50% 50% 50% 0;
+      background: var(--accent);
+      transform: rotate(-45deg);
+      cursor: pointer;
+    }
+    .pin-tooltip {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(11, 18, 32, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      padding: 15px;
+      width: 200px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    .map-pin:hover .pin-tooltip {
+      opacity: 1;
+      visibility: visible;
+    }
+    .tooltip-photos {
+      display: flex;
+      gap: 5px;
+      margin-top: 10px;
+    }
+    .tooltip-photos img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    
+    /* RESPONSIVE */
+    @media (max-width:1024px){.grid-3{grid-template-columns:repeat(2,1fr)}.contact-wrap{grid-template-columns:1fr}.f-top{grid-template-columns:1fr 1fr}}
+    @media (max-width:820px){.nav-links,.lang-switch,.cart{display:none}.hamburger{display:flex}}
+    @media (max-width:768px){
+      .grid-2,.grid-3{grid-template-columns:1fr}
+      .row{grid-template-columns:1fr}
+      .stats{grid-template-columns:repeat(2,1fr)}
+      .f-top{grid-template-columns:1fr}
+      .pay-grid{grid-template-columns:1fr}
+      .newsletter-content{grid-template-columns:1fr}
+      .hero h1{font-size:var(--text-3xl)}
+      .hero p{font-size:var(--text-lg)}
+    }
+    @media (max-width:480px){
+      .container{max-width:95%}
+      .stats{grid-template-columns:1fr}
+      .btn{padding:10px 16px;font-size:.9rem}
+      .section-head h2{font-size:var(--text-2xl)}
+    }
+  </style>
+</head>
+<body>
+  <!-- PARTICLES BACKGROUND -->
+  <div id="particles-js"></div>
+  
+  <!-- AUDIO (Deep House 2025) -->
+  <audio id="bgAudio" src="/moby_-_porcelain_christian_lffler_remix_(z3.fm).mp3" loop preload="auto"></audio>
+  <div id="musicTip" class="music-tip">Tap / Click to enable music 🔊</div>
+  
+  <!-- MUSIC BUTTON -->
+  <button class="music-btn" id="musicToggle" aria-label="Toggle music">
+    <i class="fa-solid fa-music"></i>
+  </button>
+  
+  <!-- TRANSLATE WIDGET -->
+  <div class="translate-widget">
+    <i class="fa-solid fa-language"></i>
+    <select id="languageSelect">
+      <option value="cz">Čeština</option>
+      <option value="de">Deutsch</option>
+      <option value="en">English</option>
+      <option value="es">Español</option>
+      <option value="fr">Français</option>
+      <option value="it">Italiano</option>
+      <option value="pl">Polski</option>
+      <option value="pt">Português</option>
+      <option value="ru">Русский</option>
+      <option value="uk">Українська</option>
+      <option value="zh">中文</option>
+      <option value="ja">日本語</option>
+      <option value="ko">한국어</option>
+      <option value="ar">العربية</option>
+      <option value="hi">हिन्दी</option>
+    </select>
+  </div>
+  
+  <!-- GOLDEN MOUSE TRAIL -->
+  <div class="mouse-trail" id="mouseTrail"></div>
+  
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="brand">
+        <!-- GIF-logo -->
+        <div class="brand-badge"><img id="logoGif" src="/log.jpg" alt="KH logo"></div>
+        <div class="brand-title">King House Travel</div>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#home" data-translate="home" class="active">Domů</a>
+        <a href="#services" data-translate="services">Služby</a>
+        <a href="#tours" data-translate="tours">Zájezdy</a>
+        <a href="#wellness" data-translate="wellness">Wellness</a>
+        <a href="#reviews" data-translate="reviews">Recenze</a>
+        <a href="#blog" data-translate="blog">Blog</a>
+        <a href="#contact" data-translate="contact">Kontakt</a>
+        <a href="obchodni-podminky.html" data-translate="terms">Obchodní podmínky</a>
+      </nav>
+      <div class="lang-switch">
+        <button class="lang-btn active" data-lang="cz" aria-label="Čeština">CZ</button>
+        <button class="lang-btn" data-lang="de" aria-label="Deutsch">DE</button>
+        <button class="lang-btn" data-lang="it" aria-label="Italiano">IT</button>
+        <button class="lang-btn" data-lang="uk" aria-label="Українська">UA</button>
+        <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+      </div>
+      <a class="icon-btn cart" href="javascript:void(0)" id="openCheckout" title="Košík">
+        <i class="fa-solid fa-cart-shopping"></i><span class="cart-badge" id="cart-count">0</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  
+  <!-- Mobile offcanvas -->
+  <aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mm-head">
+      <div class="brand" style="gap:10px"><div class="brand-badge" style="width:36px;height:36px"><img src="assets/logo.gif" alt=""></div>
+        <div class="brand-title">King House Travel</div></div>
+      <button class="icon-btn" id="mmClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <nav class="mm-links" aria-label="Mobile">
+      <a href="#home" class="mm-link" data-translate="home">Domů</a>
+      <a href="#services" class="mm-link" data-translate="services">Služby</a>
+      <a href="#tours" class="mm-link" data-translate="tours">Zájezdy</a>
+      <a href="#wellness" class="mm-link" data-translate="wellness">Wellness</a>
+      <a href="#reviews" class="mm-link" data-translate="reviews">Recenze</a>
+      <a href="#blog" class="mm-link" data-translate="blog">Blog</a>
+      <a href="#contact" class="mm-link" data-translate="contact">Kontakt</a>
+      <a href="obchodni-podminky.html" class="mm-link" data-translate="terms">Obchodní podmínky</a>
+      <a href="gdpr.html" class="mm-link" data-translate="privacy">GDPR/Privacy</a>
+      <a href="cookies.html" class="mm-link" data-translate="cookies">Cookies</a>
+      <a href="reklamni-rad.html" class="mm-link" data-translate="complaints">Reklamační řád</a>
+    </nav>
+    <div class="mm-contact">
+      <strong data-translate="quickContacts">Rychlé kontakty</strong>
+      <a href="mailto:info@kinghousetravel.cz"><i class="fa-solid fa-envelope"></i> info@kinghousetravel.cz</a>
+      <a href="tel:+420731473473"><i class="fa-solid fa-phone"></i> +420&nbsp;731&nbsp;473&nbsp;473 (Brno)</a>
+      <div class="company-info">
+        <p>King House Travel s.r.o.</p>
+        <p>IČO: 12345678 | DIČ: CZ12345678</p>
+        <p>Husova 15, 602 00 Brno-střed, Czechia</p>
+        <p>Statutární zprostředkovatel cestovního ruchu</p>
+      </div>
+      <div class="mm-social">
+        <a href="https://wa.me/420731473473" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://t.me/+420731473473" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+        <a href="https://m.me/kinghousetravel" aria-label="Messenger"><i class="fa-brands fa-facebook-messenger"></i></a>
+      </div>
+    </div>
+  </aside>
+  <div class="dim" id="dim"></div>
+  
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container">
+      <h1 data-translate="heroTitle">Objevte svět s námi</h1>
+      <p data-translate="heroSubtitle">Nezapomenutelné cesty, wellness a city-breaky. Profesionální servis od výběru po platbu.</p>
+      <div class="cta-row">
+        <a href="#tours" class="btn ghost" data-translate="viewTours">Prohlédnout zájezdy <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#contact" class="btn ghost" data-translate="contactUs">Kontaktovat <i class="fa-solid fa-phone"></i></a>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="n">100+</div><div class="muted" data-translate="toursCount">Spokojených hostů v EU</div></div>
+        <div class="stat"><div class="n">15+</div><div class="muted" data-translate="countriesCount">Destinací</div></div>
+        <div class="stat"><div class="n">2018</div><div class="muted" data-translate="clientsCount">Roku založení</div></div>
+        <div class="stat"><div class="n">4.9</div><div class="muted" data-translate="experienceYears">Hodnocení na Google</div></div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-translate="servicesTitle">Naše služby</h2>
+        <div class="bar"></div>
+        <p class="muted" data-translate="servicesSubtitle">Kompletní servis: výběr, rezervace, víza, pojištění, transfery, výlety.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="media" style="background-image:url('https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=1200&q=60')"></div>
+          <div class="body">
+            <h3 data-translate="service1Title">Individuální cesty</h3>
+            <p class="muted" data-translate="service1Desc">Trasy na míru vašemu stylu a rozpočtu.</p>
+            <div style="margin-top:auto"><a class="btn ghost" href="#contact" data-translate="moreInfo">Více</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="media" style="background-image:url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=60')"></div>
+          <div class="body">
+            <h3 data-translate="service2Title">Rezervace hotelů</h3>
+            <p class="muted" data-translate="service2Desc">Prověření partneři a resorty.</p>
+            <div style="margin-top:auto"><a class="btn ghost" href="#contact" data-translate="moreInfo">Více</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="media" style="background-image:url('https://images.unsplash.com/photo-1491369173060-3f5b5d1d2f3a?auto=format&fit=crop&w=1200&q=60')"></div>
+          <div class="body">
+            <h3 data-translate="service3Title">Lety a pojištění</h3>
+            <p class="muted" data-translate="service3Desc">Optimální lety + cestovní pojištění.</p>
+            <div style="margin-top:auto"><a class="btn ghost" href="#contact" data-translate="moreInfo">Více</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  
+  <!-- WELLNESS SECTION -->
+  <section id="wellness" class="wellness-section">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-translate="wellnessTitle">Wellness a Longevity Retreats</h2>
+        <div class="bar"></div>
+        <p class="muted" data-translate="wellnessSubtitle">Naše specializované programy pro regeneraci těla i mysli</p>
+      </div>
+      
+      <div class="wellness-intro">
+        <p data-translate="wellnessIntro">King House Travel je organizátorem exkluzivních wellness pobytů v partnerských klinikách a hotelech po celé Evropě. Naše programy jsou zaměřeny na komplexní regeneraci, detoxikaci a anti-age protokoly pod vedením odborníků.</p>
+        <p class="disclaimer" data-translate="medicalDisclaimer">Upozornění: Všechny zdravotní procedury jsou prováděny pod dohledem kvalifikovaných lékařů a specialistů. Výsledky se mohou lišit u jednotlivých klientů.</p>
+      </div>
+      
+      <div class="grid-3">
+        <!-- Program 1 -->
+        <article class="card wellness-program">
+          <div class="media" style="background-image:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1200&q=60')"></div>
+          <div class="body">
+            <h3 data-translate="detoxProgram">Detox & Diagnostics</h3>
+            <p class="muted" data-translate="detoxDesc">7-denní program s komplexní diagnostikou, detoxikací organismu a výživovým poradenstvím.</p>
+            <ul class="program-features">
+              <li>Krevní a močové testy</li>
+              <li>IV terapie vitamíny</li>
+              <li>Kolon hydroterapie</li>
+              <li>Výživové konzultace</li>
+            </ul>
+            <div class="program-footer">
+              <strong style="color:var(--accent);font-size:1.2rem" class="price" data-price="2490">€2 490</strong>
+              <a href="wellness-detox.html" class="btn ghost" data-translate="viewDetails">Detaily</a>
+            </div>
+          </div>
+        </article>
+        
+        <!-- Program 2 -->
+        <article class="card wellness-program">
+          <div class="media" style="background-image:url('https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=1200&q=60')"></div>
+          <div class="body">
+            <h3 data-translate="antiAgeProgram">Anti-Age & Hormonal Balance</h3>
+            <p class="muted" data-translate="antiAgeDesc">14-denní program zaměřený na hormonální optimalizaci a anti-age protokoly.</p>
+            <ul class="program-features">
+              <li>Hormonální profil</li>
+              <li>Bioidentická hormonální terapie</li>
+              <li>Stem cell terapie</li>
+              <li>Osobní anti-age plán</li>
+            </ul>
+            <div class="program-footer">
+              <strong style="color:var(--accent);font-size:1.2rem" class="price" data-price="4890">€4 890</strong>
+              <a href="wellness-antiage.html" class="btn ghost" data-translate="viewDetails">Detaily</a>
+            </div>
+          </div>
+        </article>
+        
+        <!-- Program 3 -->
+        <article class="card wellness-program">
+          <div class="media" style="background-image:url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=60')"></div>
+          <div class="body">
+            <h3 data-translate="mentalWellnessProgram">Mental Wellness & Stress Relief</h3>
+            <p class="muted" data-translate="mentalWellnessDesc">7-denní program pro duševní regeneraci a snížení stresu.</p>
+            <ul class="program-features">
+              <li>Mindfulness a meditace</li>
+              <li>Yoga a dechová cvičení</li>
+              <li>Konzultace s psychology</li>
+              <li>Přírodní adaptogeny</li>
+            </ul>
+            <div class="program-footer">
+              <strong style="color:var(--accent);font-size:1.2rem" class="price" data-price="1890">€1 890</strong>
+              <a href="wellness-mental.html" class="btn ghost" data-translate="viewDetails">Detaily</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  
+  <!-- PARTNERS SECTION -->
+  <section id="partners" class="partners-section">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-translate="partnersTitle">Partnerské kliniky a hotely</h2>
+        <div class="bar"></div>
+        <p class="muted" data-translate="partnersSubtitle">Spolupracujeme pouze s prověřenými partnery nejvyšší kvality</p>
+      </div>
+      
+      <div class="partners-grid">
+        <!-- Partner 1 -->
+        <div class="partner-card">
+          <div class="partner-logo">
+            <img src="/images/partners/clinic-1-logo.png" alt="European Wellness Clinic">
+          </div>
+          <h3>European Wellness Clinic</h3>
+          <p class="muted" data-translate="partner1Desc">Prémiová klinika specializovaná na preventivní medicínu a anti-age terapie v srdci Prahy.</p>
+          <div class="partner-gallery">
+            <img src="/images/partners/clinic-1-1.jpg" alt="Klinika">
+            <img src="/images/partners/clinic-1-2.jpg" alt="Procedura">
+            <img src="/images/partners/clinic-1-3.jpg" alt="Vybavení">
+          </div>
+          <a href="#" class="btn ghost" data-translate="moreInfo">Více informací</a>
+        </div>
+        
+        <!-- Partner 2 -->
+        <div class="partner-card">
+          <div class="partner-logo">
+            <img src="/images/partners/hotel-1-logo.png" alt="Grand Hotel Imperial">
+          </div>
+          <h3>Grand Hotel Imperial</h3>
+          <p class="muted" data-translate="partner2Desc">5* luxusní hotel s vlastním wellness centrem v rakouských Alpách.</p>
+          <div class="partner-gallery">
+            <img src="/images/partners/hotel-1-1.jpg" alt="Hotel">
+            <img src="/images/partners/hotel-1-2.jpg" alt="Wellness">
+            <img src="/images/partners/hotel-1-3.jpg" alt="Pokoj">
+          </div>
+          <a href="#" class="btn ghost" data-translate="moreInfo">Více informací</a>
+        </div>
+        
+        <!-- Partner 3 -->
+        <div class="partner-card">
+          <div class="partner-logo">
+            <img src="/images/partners/clinic-2-logo.png" alt="Mediterranean Health Center">
+          </div>
+          <h3>Mediterranean Health Center</h3>
+          <p class="muted" data-translate="partner3Desc">Moderní zdravotní centrum na Krétě specializované na detox a výživové programy.</p>
+          <div class="partner-gallery">
+            <img src="/images/partners/clinic-2-1.jpg" alt="Centrum">
+            <img src="/images/partners/clinic-2-2.jpg" alt="Terapie">
+            <img src="/images/partners/clinic-2-3.jpg" alt="Pláž">
+          </div>
+          <a href="#" class="btn ghost" data-translate="moreInfo">Více informací</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- TOURS (prices in EUR) -->
+  <section id="tours">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-translate="toursTitle">Oblíbené zájezdy</h2>
+        <div class="bar"></div>
+        <p class="muted" data-translate="toursSubtitle">Vyberte si vysněný zájezd — od city-breaku po wellness dovolenou.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="media" style="background-image:url('https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1200&q=60')"></div>
+          <div class="body">
+            <h3 data-translate="tour1Title">Romantická Paříž</h3>
+            <p class="muted" data-translate="tour1Desc">3 dny / 2 noci • 2–4 osoby</p>
+            <div class="tour-details">
+              <div class="tour-includes">
+                <h4 data-translate="includes">Zahrnuje:</h4>
+                <ul>
+                  <li>Letenka tam a zpět</li>
+                  <li>Ubytování v hotelu 4*</li>
+                  <li>Snídaně</li>
+                  <li>Transfert letiště-hotel</li>
+                </ul>
+              </div>
+              <div class="tour-excludes">
+                <h4 data-translate="excludes">Nezahrnuje:</h4>
+                <ul>
+                  <li>Cestovní pojištění</li>
+                  <li>Víza (pokud vyžadovány)</li>
+                </ul>
+              </div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:auto">
+              <strong style="color:var(--accent);font-size:1.2rem" class="price" data-price="499">€499</strong>
+              <button class="btn ghost add" data-name="Romantická Paříž" data-price="499" data-translate="addToCart">Přidat</button>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="media" style="background-image:url('https://images.unsplash.com/photo-1543429776-2782fcdfa3da?auto=format&fit=crop&w=1200&q=60')"></div>
+          <div class="body">
+            <h3 data-translate="tour2Title">Maledivy — water villas</h3>
+            <p class="muted" data-translate="tour2Desc">7 dní / 6 nocí • 2 osoby</p>
+            <div class="tour-details">
+              <div class="tour-includes">
+                <h4 data-translate="includes">Zahrnuje:</h4>
+                <ul>
+                  <li>Letenka tam a zpět</li>
+                  <li>Ubytování ve water villa</li>
+                  <li>Plná penze</li>
+                  <li>Transfert letiště-hotel</li>
+                </ul>
+              </div>
+              <div class="tour-excludes">
+                <h4 data-translate="excludes">Nezahrnuje:</h4>
+                <ul>
+                  <li>Cestovní pojištění</li>
+                  <li>Víza (pokud vyžadovány)</li>
+                </ul>
+              </div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:auto">
+              <strong style="color:var(--accent);font-size:1.2rem" class="price" data-price="1890">€1 890</strong>
+              <button class="btn ghost add" data-name="Maledivy" data-price="1890" data-translate="addToCart">Přidat</button>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="media" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1200&q=60')"></div>
+          <div class="body">
+            <h3 data-translate="tour3Title">Dubaj — orientální pohádky</h3>
+            <p class="muted" data-translate="tour3Desc">5 dní / 4 noci • 2–6 osob</p>
+            <div class="tour-details">
+              <div class="tour-includes">
+                <h4 data-translate="includes">Zahrnuje:</h4>
+                <ul>
+                  <li>Letenka tam a zpět</li>
+                  <li>Ubytování v hotelu 5*</li>
+                  <li>Snídaně</li>
+                  <li>Transfert letiště-hotel</li>
+                </ul>
+              </div>
+              <div class="tour-excludes">
+                <h4 data-translate="excludes">Nezahrnuje:</h4>
+                <ul>
+                  <li>Cestovní pojištění</li>
+                  <li>Víza (pokud vyžadovány)</li>
+                </ul>
+              </div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:auto">
+              <strong style="color:var(--accent);font-size:1.2rem" class="price" data-price="890">€890</strong>
+              <button class="btn ghost add" data-name="Dubaj" data-price="890" data-translate="addToCart">Přidat</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  
+  <!-- FAQ SECTION -->
+  <section id="faq" class="faq-section">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-translate="faqTitle">Často kladené otázky</h2>
+        <div class="bar"></div>
+      </div>
+      
+      <div class="faq-accordion">
+        <!-- FAQ Item 1 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span data-translate="faqVisaQuestion">Potřebuji vízum pro cestu?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p data-translate="faqVisaAnswer">Záleží na destinaci. Pro země EU/EHP nepotřebujete vízum, ale platný občanský průkaz nebo cestovní pas. Pro mimoevropské země vám pomůžeme s vyřízením víza. Všechny informace o vízové povinnosti najdete u konkrétního zájezdu.</p>
+          </div>
+        </div>
+        
+        <!-- FAQ Item 2 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span data-translate="faqInsuranceQuestion">Je v ceně zahrnuto cestovní pojištění?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p data-translate="faqInsuranceAnswer">Základní cestovní pojištění není v ceně zájezdu automaticky zahrnuto, ale můžete si jej přiobjednat během rezervace. Doporučujeme komplexní pojištění, které kryje léčebné výlohy, storno poplatky a případnou repatriaci.</p>
+          </div>
+        </div>
+        
+        <!-- FAQ Item 3 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span data-translate="faqCancellationQuestion">Jaké jsou podmínky zrušení rezervace?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p data-translate="faqCancellationAnswer">Podmínky zrušení se liší podle typu zájezdu a času do odjezdu. Obecně platí, že při zrušení více než 30 dní před odjezdem je storno poplatek 10% z ceny zájezdu, při zrušení 14-30 dní před odjezdem 30% a při zrušení méně než 14 dní před odjezdem 50-100% z ceny zájezdu. Doporučujeme uzavřít storno pojištění.</p>
+          </div>
+        </div>
+        
+        <!-- FAQ Item 4 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span data-translate="faqPaymentQuestion">Je možné platit na splátky?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p data-translate="faqPaymentAnswer">Ano, u zájezdů s hodnotou nad 1 500 € nabízíme možnost platby na 2-3 splátky. První splátka ve výši 50% je splatná při rezervaci, druhá splátka 30 dní před odjezdem. Případná třetí splátka je splatná 14 dní před odjezdem. Tato služba je zpoplatněna poplatkem 5% z celkové ceny zájezdu.</p>
+          </div>
+        </div>
+        
+        <!-- FAQ Item 5 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span data-translate="faqRefundQuestion">Jak probíhá vrácení peněz při zruření zájezdu ze strany CK?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p data-translate="faqRefundAnswer">V případě, že cestovní kancelář zruší zájezd, máte nárok na 100% vrácení zaplacené částky. Peníze vrátíme na stejný účet, ze kterého přišla platba, a to nejpozději do 14 dní od zrušení zájezdu. Pokud jste si zakoupili i letenky, pomůžeme vám s jejich vrácením nebo změnou.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- NEWSLETTER SECTION -->
+  <section id="newsletter" class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-content">
+        <div class="newsletter-text">
+          <h2 data-translate="newsletterTitle">Získejte exkluzivní nabídky</h2>
+          <p data-translate="newsletterDesc">Přihlaste se k odběru našeho newsletteru a získejte slevu 10 € na první rezervaci a pravidelné informace o nových zájezdech a speciálních nabídkách.</p>
+          <div class="newsletter-benefits">
+            <div class="benefit-item">
+              <i class="fa-solid fa-gift"></i>
+              <span data-translate="newsletterBenefit1">Sleva 10 € na první nákup</span>
+            </div>
+            <div class="benefit-item">
+              <i class="fa-solid fa-download"></i>
+              <span data-translate="newsletterBenefit2">Zdarma katalog zájezdů PDF</span>
+            </div>
+            <div class="benefit-item">
+              <i class="fa-solid fa-bell"></i>
+              <span data-translate="newsletterBenefit3">Informace o first-minute nabídkách</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="newsletter-form">
+          <form id="newsletterForm">
+            <div class="form-group">
+              <input type="text" id="newsletterName" placeholder="Vaše jméno" required>
+            </div>
+            <div class="form-group">
+              <input type="email" id="newsletterEmail" placeholder="Váš email" required>
+            </div>
+            <div class="form-group">
+              <select id="newsletterInterest">
+                <option value="" selected>Vyberte váš zájem</option>
+                <option value="wellness">Wellness pobyty</option>
+                <option value="exotic">Exotické destinace</option>
+                <option value="city">City breaky</option>
+                <option value="all">Všechny nabídky</option>
+              </select>
+            </div>
+            <div class="form-group checkbox">
+              <input type="checkbox" id="newsletterAgree" required>
+              <label for="newsletterAgree">Souhlasím se <a href="gdpr.html" target="_blank">zpracováním osobních údajů</a></label>
+            </div>
+            <button type="submit" class="btn" data-translate="newsletterSubscribe">Přihlásit k odběru</button>
+          </form>
+          <div id="newsletterMessage" class="newsletter-message"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- REVIEWS – foreigners -->
+  <section id="reviews">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-translate="reviewsTitle">Hodnocení klientů</h2><div class="bar"></div>
+      </div>
+      <div class="grid-3">
+        <article class="card review">
+          <div class="body">
+            <div class="review-header">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael R." class="reviewer-photo">
+              <div>
+                <h3>Michael R. (UK)</h3>
+                <div class="review-meta">
+                  <span class="flag">🇬🇧</span>
+                  <span class="date">15/05/2023</span>
+                  <span class="source">Google</span>
+                </div>
+              </div>
+            </div>
+            <div class="rating">★★★★★</div>
+            <p class="muted">"Everything was seamless — flights, hotel, transfers. Highly recommend!"</p>
+          </div>
+        </article>
+        <article class="card review">
+          <div class="body">
+            <div class="review-header">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Giulia F." class="reviewer-photo">
+              <div>
+                <h3>Giulia F. (IT)</h3>
+                <div class="review-meta">
+                  <span class="flag">🇮🇹</span>
+                  <span class="date">22/06/2023</span>
+                  <span class="source">Tripadvisor</span>
+                </div>
+              </div>
+            </div>
+            <div class="rating">★★★★★</div>
+            <p class="muted">"Organizzazione perfetta! Il team ha curato ogni dettaglio."</p>
+          </div>
+        </article>
+        <article class="card review">
+          <div class="body">
+            <div class="review-header">
+              <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Thomas K." class="reviewer-photo">
+              <div>
+                <h3>Thomas K. (DE)</h3>
+                <div class="review-meta">
+                  <span class="flag">🇩🇪</span>
+                  <span class="date">10/07/2023</span>
+                  <span class="source">Google</span>
+                </div>
+              </div>
+            </div>
+            <div class="rating">★★★★★</div>
+            <p class="muted">"Top Service und super Ausflüge. Gerne wieder!"</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  
+  <!-- SOCIAL PROOF SECTION -->
+  <section id="social-proof" class="social-proof-section">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-translate="socialProofTitle">Naši klienti na cestách</h2>
+        <div class="bar"></div>
+      </div>
+      
+      <div class="social-tabs">
+        <button class="tab-btn active" data-tab="instagram">Instagram</button>
+        <button class="tab-btn" data-tab="tiktok">TikTok</button>
+        <button class="tab-btn" data-tab="map">Mapa zážitků</button>
+      </div>
+      
+      <div class="tab-content active" id="instagram">
+        <div class="instagram-grid">
+          <!-- Instagram Post 1 -->
+          <div class="instagram-post">
+            <div class="post-media">
+              <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=600&q=80" alt="Instagram post">
+              <div class="post-overlay">
+                <div class="post-stats">
+                  <span><i class="fa-solid fa-heart"></i> 242</span>
+                  <span><i class="fa-solid fa-comment"></i> 18</span>
+                </div>
+              </div>
+            </div>
+            <div class="post-content">
+              <p><strong>@jana_novakova</strong> v Paříži 🇫🇷 Díky @kinghousetravel za skvěle zorganizovaný výlet! #paris #france #vacation #kinghousetravel</p>
+            </div>
+          </div>
+          
+          <!-- Instagram Post 2 -->
+          <div class="instagram-post">
+            <div class="post-media">
+              <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=80" alt="Instagram post">
+              <div class="post-overlay">
+                <div class="post-stats">
+                  <span><i class="fa-solid fa-heart"></i> 318</span>
+                  <span><i class="fa-solid fa-comment"></i> 24</span>
+                </div>
+              </div>
+            </div>
+            <div class="post-content">
+              <p><strong>@petr_svec</strong> na Maledivách 🏝️ Splněný sen díky týmu @kinghousetravel! #maldives #paradise #travel #kinghousetravel</p>
+            </div>
+          </div>
+          
+          <!-- Instagram Post 3 -->
+          <div class="instagram-post">
+            <div class="post-media">
+              <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80" alt="Instagram post">
+              <div class="post-overlay">
+                <div class="post-stats">
+                  <span><i class="fa-solid fa-heart"></i> 156</span>
+                  <span><i class="fa-solid fa-comment"></i> 12</span>
+                </div>
+              </div>
+            </div>
+            <div class="post-content">
+              <p><strong>@eva_dvorakova</strong> v Dubaji 🇦🇪 Neuvěřitelný zážitek! #dubai #uae #luxurytravel #kinghousetravel</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="tab-content" id="tiktok">
+        <div class="tiktok-grid">
+          <!-- TikTok Video 1 -->
+          <div class="tiktok-video">
+            <div class="video-thumbnail">
+              <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=600&q=80" alt="TikTok video">
+              <div class="play-button">
+                <i class="fa-solid fa-play"></i>
+              </div>
+            </div>
+            <div class="video-content">
+              <p><strong>@martin_travel</strong> 3 dny v Paříži za 499€? Ano, jde to! 🇫🇷 #travelhacks #paris #kinghousetravel</p>
+            </div>
+          </div>
+          
+          <!-- TikTok Video 2 -->
+          <div class="tiktok-video">
+            <div class="video-thumbnail">
+              <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=600&q=80" alt="TikTok video">
+              <div class="play-button">
+                <i class="fa-solid fa-play"></i>
+              </div>
+            </div>
+            <div class="video-content">
+              <p><strong>@lucie_wellness</strong> Můj detox pobyt v Praze 🧖‍♀️ #wellness #detox #kinghousetravel</p>
+            </div>
+          </div>
+          
+          <!-- TikTok Video 3 -->
+          <div class="tiktok-video">
+            <div class="video-thumbnail">
+              <img src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?auto=format&fit=crop&w=600&q=80" alt="TikTok video">
+              <div class="play-button">
+                <i class="fa-solid fa-play"></i>
+              </div>
+            </div>
+            <div class="video-content">
+              <p><strong>@tomas_explorer</strong> Dubaj ve 3 minutách 🇦🇪 #dubai #travel #kinghousetravel</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="tab-content" id="map">
+        <div class="map-container">
+          <div class="map-wrapper">
+            <!-- This would be replaced with an actual map implementation -->
+            <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce?auto=format&fit=crop&w=1200&q=80" alt="World map" class="map-image">
+            <div class="map-pins">
+              <!-- Pin 1 -->
+              <div class="map-pin" style="top: 30%; left: 48%;">
+                <div class="pin-tooltip">
+                  <h4>Paříž, Francie</h4>
+                  <p>12 klientů v tomto měsíci</p>
+                  <div class="tooltip-photos">
+                    <img src="https://images.unsplash.com/photo-1502602898536-47ad22581b52?auto=format&fit=crop&w=100&q=80" alt="Client photo">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?auto=format&fit=crop&w=100&q=80" alt="Client photo">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Client photo">
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Pin 2 -->
+              <div class="map-pin" style="top: 60%; left: 70%;">
+                <div class="pin-tooltip">
+                  <h4>Dubaj, UAE</h4>
+                  <p>8 klientů v tomto měsíci</p>
+                  <div class="tooltip-photos">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="Client photo">
+                    <img src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?auto=format&fit=crop&w=100&q=80" alt="Client photo">
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Pin 3 -->
+              <div class="map-pin" style="top: 70%; left: 55%;">
+                <div class="pin-tooltip">
+                  <h4>Maledivy</h4>
+                  <p>5 klientů v tomto měsíci</p>
+                  <div class="tooltip-photos">
+                    <img src="https://images.unsplash.com/photo-1540202404-1b873cf1f549?auto=format&fit=crop&w=100&q=80" alt="Client photo">
+                    <img src="https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?auto=format&fit=crop&w=100&q=80" alt="Client photo">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- BLOG -->
+  <section id="blog" class="blog">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-translate="blogTitle">Náš blog</h2><div class="bar"></div>
+        <p class="muted" data-translate="blogSubtitle">Užitečné tipy, příběhy a novinky ze světa cestování</p>
+      </div>
+      <div class="grid-3">
+        <article class="card blog">
+          <div class="media" style="background-image:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=60')"></div>
+          <div class="body">
+            <div class="muted"><i class="fa-regular fa-calendar"></i> 15/06/2025</div>
+            <div class="title" data-translate="blog1Title">Top 10 míst na léto v Evropě</div>
+            <p class="muted" data-translate="blog1Desc">Od Středomoří po Alpy — výběr must-see.</p>
+            <a class="btn ghost" href="#" data-translate="readMore">Číst dál</a>
+          </div>
+        </article>
+        <article class="card blog">
+          <div class="media" style="background-image:url('https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=1200&q=60')"></div>
+          <div class="body">
+            <div class="muted"><i class="fa-regular fa-calendar"></i> 02/06/2025</div>
+            <div class="title" data-translate="blog2Title">Jak sbalit kufr bez přetížení</div>
+            <p class="muted" data-translate="blog2Desc">Seznam must-have + organizační triky.</p>
+            <a class="btn ghost" href="#" data-translate="readMore">Číst dál</a>
+          </div>
+        </article>
+        <article class="card blog">
+          <div class="media" style="background-image:url('https://images.unsplash.com/photo-1519451243450-1a7c1a6b8a9c?auto=format&fit=crop&w=1200&q=60')"></div>
+          <div class="body">
+            <div class="muted"><i class="fa-regular fa-calendar"></i> 20/05/2025</div>
+            <div class="title" data-translate="blog3Title">Nej pláže pro dokonalý relax</div>
+            <p class="muted" data-translate="blog3Desc">Maledivy, Karibik a tajné spoty.</p>
+            <a class="btn ghost" href="#" data-translate="readMore">Číst dál</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-translate="contactTitle">Kontaktujte nás</h2><div class="bar"></div>
+        <p class="muted" data-translate="contactSubtitle">Pište nebo volejte — rychle odpovíme a pomůžeme s výběrem.</p>
+      </div>
+      <div class="contact-wrap">
+        <div class="info-block">
+          <div class="contact-item"><div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div><strong data-translate="address">Adresa</strong><div class="muted">Husova 15, 602 00 Brno-střed, Czechia</div></div>
+          </div>
+          <div class="contact-item"><div class="icon"><i class="fa-solid fa-phone"></i></div>
+            <div><strong data-translate="phone">Telefon</strong><div><a href="tel:+420731473473">+420&nbsp;731&nbsp;473&nbsp;473</a></div></div>
+          </div>
+          <div class="contact-item"><div class="icon"><i class="fa-solid fa-envelope"></i></div>
+            <div><strong data-translate="email">Email</strong><div><a href="mailto:info@kinghousetravel.cz">info@kinghousetravel.cz</a></div></div>
+          </div>
+          <div class="contact-item"><div class="icon"><i class="fa-solid fa-clock"></i></div>
+            <div><strong data-translate="openingHours">Otevírací doba</strong><div class="muted" data-translate="hours">Po–Pá: 09:00–18:00 • So: 10:00–15:00</div></div>
+          </div>
+          <div class="contact-actions">
+            <a href="https://wa.me/420731473473" class="btn whatsapp" aria-label="WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="https://t.me/+420731473473" class="btn telegram" aria-label="Telegram">
+              <i class="fa-brands fa-telegram"></i> Telegram
+            </a>
+            <a href="#contact-form" class="btn consultation" data-translate="freeConsultation">
+              <i class="fa-solid fa-phone"></i> Bezplatná konzultace 15 min
+            </a>
+          </div>
+          <div class="socials">
+            <a href="https://wa.me/420731473473" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://t.me/+420731473473" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+            <a href="https://m.me/kinghousetravel" aria-label="Messenger"><i class="fa-brands fa-facebook-messenger"></i></a>
+            <a href="mailto:info@kinghousetravel.cz" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+          <div class="company-info">
+            <p>King House Travel s.r.o.</p>
+            <p>IČO: 12345678 | DIČ: CZ12345678</p>
+            <p>Statutární zprostředkovatel cestovního ruchu</p>
+          </div>
+        </div>
+        <form class="form" id="contactForm" novalidate>
+          <div class="row">
+            <div><label for="name" data-translate="yourName">Vaše jméno</label><input id="name" name="name" placeholder="Jméno" required /></div>
+            <div><label for="email" data-translate="email">Email</label><input id="email" name="email" type="email" placeholder="your@email.com" required /></div>
+          </div>
+          <div class="row">
+            <div><label for="phone" data-translate="phone">Telefon</label><input id="phone" name="phone" placeholder="+420 731 473 473" /></div>
+            <div>
+              <label for="topic" data-translate="topic">Téma</label>
+              <select id="topic" name="topic" required>
+                <option value="" data-translate="selectTopic">Vyberte téma</option>
+                <option data-translate="bookingTopic">Rezervace zájezdu</option>
+                <option data-translate="infoTopic">Informace o zájezdech</option>
+                <option data-translate="cooperationTopic">Spolupráce</option>
+                <option data-translate="otherTopic">Jiné</option>
+              </select>
+            </div>
+          </div>
+          <div><label for="msg" data-translate="message">Zpráva</label><textarea id="msg" name="msg" placeholder="Napište váš dotaz..." required></textarea></div>
+          <button class="btn ghost submit" type="submit" data-translate="sendMessage">Odeslat zprávu</button>
+          <div id="formNote" class="muted" style="margin-top:8px"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+  
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="f-top">
+        <div>
+          <div class="f-brand">
+            <div class="brand-badge" style="width:38px;height:38px"><img src="/log.jpg" alt=""></div>
+            <strong>King House Travel</strong>
+          </div>
+          <p class="muted" data-translate="footerDesc">Exkluzivní cesty, wellness retreaty a městské víkendy. Základna — Brno, Česko.</p>
+          <div class="company-info">
+            <p>King House Travel s.r.o.</p>
+            <p>IČO: 12345678 | DIČ: CZ12345678</p>
+            <p>Husova 15, 602 00 Brno-střed, Czechia</p>
+            <p>Statutární zprostředkovatel cestovního ruchu</p>
+          </div>
+        </div>
+        <div class="f-links">
+          <strong data-translate="pages">Stránky</strong>
+          <a href="#services" data-translate="services">Služby</a>
+          <a href="#tours" data-translate="tours">Zájezdy</a>
+          <a href="#wellness" data-translate="wellness">Wellness</a>
+          <a href="#blog" data-translate="blog">Blog</a>
+          <a href="#contact" data-translate="contact">Kontakt</a>
+        </div>
+        <div class="f-links">
+          <strong data-translate="legal">Právní informace</strong>
+          <a href="obchodni-podminky.html" data-translate="terms">Obchodní podmínky</a>
+          <a href="gdpr.html" data-translate="privacy">GDPR/Privacy</a>
+          <a href="cookies.html" data-translate="cookies">Cookies</a>
+          <a href="reklamni-rad.html" data-translate="complaints">Reklamační řád</a>
+        </div>
+      </div>
+      <div class="copy" data-translate="copyright">© <span id="year"></span> King House Travel. Všechna práva vyhrazena.</div>
+    </div>
+  </footer>
+  
+  <!-- CHATBOT FAB -->
+  <button class="chat-fab" id="chatFab" title="Travel Assistant"><i class="fa-solid fa-comments"></i></button>
+  <div class="chat-panel" id="chatPanel" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="chat-head">
+      <div><strong>Travel Assistant</strong></div>
+      <button class="icon-btn" id="chatClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="chat-body">
+      <div id="chatSteps">
+        <!-- Step 1: Destination -->
+        <div class="chat-step active" id="step1">
+          <h4 data-translate="destination">Kam chcete jet?</h4>
+          <input id="bPlace" placeholder="Paříž / Maledivy / Dubaj..." />
+          <button class="btn next-step" data-next="2">Další</button>
+        </div>
+        
+        <!-- Step 2: Dates -->
+        <div class="chat-step" id="step2">
+          <h4 data-translate="when">Kdy?</h4>
+          <div class="inline">
+            <div style="flex:1"><label data-translate="from">Od</label><input id="bFrom" type="date" /></div>
+            <div style="flex:1"><label data-translate="to">Do</label><input id="bTo" type="date" /></div>
+          </div>
+          <div class="step-nav">
+            <button class="btn ghost prev-step" data-prev="1">Zpět</button>
+            <button class="btn next-step" data-next="3">Další</button>
+          </div>
+        </div>
+        
+        <!-- Step 3: People and Budget -->
+        <div class="chat-step" id="step3">
+          <h4 data-translate="details">Detaily</h4>
+          <div class="inline">
+            <div style="flex:1"><label data-translate="people">Osob</label><input id="bPeople" type="number" min="1" value="2" /></div>
+            <div style="flex:1"><label data-translate="budget">Rozpočet (€)</label><input id="bBudget" type="number" min="0" placeholder="1000" /></div>
+          </div>
+          <div class="step-nav">
+            <button class="btn ghost prev-step" data-prev="2">Zpět</button>
+            <button class="btn next-step" data-next="4">Další</button>
+          </div>
+        </div>
+        
+        <!-- Step 4: Contact Info -->
+        <div class="chat-step" id="step4">
+          <h4 data-translate="contactInfo">Kontaktní údaje</h4>
+          <input id="bName" placeholder="Jméno" required />
+          <input id="bEmail" type="email" placeholder="Email" required />
+          <input id="bPhone" placeholder="Telefon" />
+          <div class="step-nav">
+            <button class="btn ghost prev-step" data-prev="3">Zpět</button>
+            <button class="btn submit-lead">Odeslat poptávku</button>
+          </div>
+        </div>
+        
+        <!-- Step 5: Success -->
+        <div class="chat-step" id="step5">
+          <div class="success-message">
+            <i class="fa-solid fa-circle-check"></i>
+            <h4 data-translate="successTitle">Děkujeme za Váš zájem!</h4>
+            <p data-translate="successMessage">Ozveme se Vám v nejbližším možném termínu s nabídkou na míru.</p>
+          </div>
+          <button class="btn restart-chat">Nová poptávka</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- CHECKOUT MODAL -->
+  <div class="modal" id="checkoutModal" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-head">
+        <strong data-translate="checkoutTitle">Dokončení objednávky</strong>
+        <button class="icon-btn" id="closeCheckout" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div id="cartItems" class="badge" data-translate="emptyCart">Košík je prázdný</div>
+        <div class="pay-grid" style="margin-top:12px">
+          <!-- Stripe Payment -->
+          <div class="pay-box">
+            <div class="inline" style="justify-content:space-between;align-items:center">
+              <h3 style="margin:0" data-translate="cardPayment">Platba kartou</h3>
+            </div>
+            <p class="muted" data-translate="securePayment">Zabezpečená platba přes Stripe</p>
+            <button class="btn" id="payStripe" style="margin-top:8px" data-translate="payButton">Zaplatit kartou</button>
+          </div>
+          
+          <!-- Alt methods -->
+          <div class="pay-box">
+            <h3 style="margin:0" data-translate="otherPayment">Další způsoby</h3>
+            <p class="muted" data-translate="paymentDesc">Můžete zaplatit přes PayPal nebo SEPA bankovním převodem v EUR.</p>
+            <a class="btn ghost" id="payPaypal" href="mailto:info@kinghousetravel.cz?subject=PayPal%20Invoice%20Request">
+              <i class="fa-brands fa-paypal"></i> <span data-translate="paypalRequest">Vyžádat PayPal fakturu</span>
+            </a>
+            <div style="margin-top:8px">
+              <div class="badge">SEPA Bank Transfer (€)</div>
+              <div class="muted" style="margin-top:6px">
+                <div>IBAN: <strong>CZ6508000000001234567890</strong> • BIC: <strong>GIBACZPX</strong></div>
+                <div data-translate="invoiceRequest">Napište nám pro vystavení faktury s údaji.</div>
+              </div>
+            </div>
+            <div style="margin-top:12px" class="inline">
+              <div class="qr">QR</div>
+              <div class="muted"><strong data-translate="cryptoPayment">USDT TRC20 (volitelné)</strong><br/>TFA319WbHsYfhYqVa67vXiwboxioBQM82R</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- LIBS -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://js.stripe.com/v3/"></script>
+  
+  <script>
+    /* ===== Particles config (dark blue + golden) ===== */
+    particlesJS("particles-js",{
+      particles:{
+        number:{value:70,density:{enable:true,value_area:800}},
+        color:{value:"#d4af37"},
+        shape:{type:"circle"},
+        opacity:{value:0.6},
+        size:{value:3,random:true},
+        line_linked:{enable:true,distance:150,color:"#d4af37",opacity:0.35,width:1},
+        move:{enable:true,speed:1.6,out_mode:"out"}
+      },
+      interactivity:{
+        detect_on:"canvas",
+        events:{onhover:{enable:true,mode:"repulse"},onclick:{enable:true,mode:"push"}},
+        modes:{repulse:{distance:110},push:{particles_nb:4}}
+      },
+      retina_detect:true
+    });
+    
+    /* ===== Navbar autohide ===== */
+    (function(){
+      const nav = document.getElementById('navbar');
+      let lastY = window.scrollY, ticking = false;
+      function onScroll(){
+        const y = window.scrollY;
+        if (y > 60 && y > lastY){ nav.classList.add('navbar--hidden'); }
+        else{ nav.classList.remove('navbar--hidden'); }
+        lastY = y; ticking = false;
+      }
+      window.addEventListener('scroll', () => { if(!ticking){ window.requestAnimationFrame(onScroll); ticking = true; } });
+    })();
+    
+    /* ===== Mobile menu ===== */
+    const burger = document.getElementById('hamburger');
+    const mm = document.getElementById('mobileMenu');
+    const mmClose = document.getElementById('mmClose');
+    const dim = document.getElementById('dim');
+    const mmLinks = mm.querySelectorAll('a');
+    function openMM(){ mm.classList.add('active'); dim.classList.add('show'); burger.classList.add('active'); burger.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+    function closeMM(){ mm.classList.remove('active'); dim.classList.remove('show'); burger.classList.remove('active'); burger.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+    burger.addEventListener('click', () => mm.classList.contains('active') ? closeMM() : openMM());
+    mmClose.addEventListener('click', closeMM); dim.addEventListener('click', closeMM); mmLinks.forEach(a => a.addEventListener('click', closeMM));
+    
+    /* ===== Prices/Currency — EUR ===== */
+    const EUR = new Intl.NumberFormat('de-DE', {style:'currency', currency:'EUR'});
+    document.querySelectorAll('.price').forEach(el=>{
+      const p = +el.dataset.price;
+      el.textContent = EUR.format(p);
+    });
+    
+    /* ===== Cart / Checkout (EUR) ===== */
+    const countEl = document.getElementById('cart-count');
+    const cart = [];
+    
+    function renderCart(){
+      const wrap = document.getElementById('cartItems');
+      if (cart.length===0){ 
+        wrap.className='badge'; 
+        wrap.textContent = translations[currentLang].emptyCart || 'Košík je prázdný'; 
+        return; 
+      }
+      
+      wrap.classList.remove('badge'); 
+      wrap.innerHTML = '';
+      
+      const ul = document.createElement('ul'); 
+      ul.style.margin='0'; 
+      ul.style.padding='0 0 0 16px';
+      
+      let total = 0;
+      cart.forEach(it => { 
+        total += it.price; 
+        const li = document.createElement('li'); 
+        li.style.marginBottom = '8px';
+        li.innerHTML = `
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <strong>${it.name}</strong>
+              <div style="font-size: 0.9em; opacity: 0.8;">${it.duration || 'N/A'}</div>
+            </div>
+            <div style="display: flex; align-items: center;">
+              <span style="margin-right: 10px;">${EUR.format(it.price)}</span>
+              <button class="remove-item" data-index="${cart.indexOf(it)}" style="background: none; border: none; color: var(--accent); cursor: pointer;">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </div>
+          </div>
+        `; 
+        ul.appendChild(li); 
+      });
+      
+      wrap.appendChild(ul);
+      
+      const t = document.createElement('div'); 
+      t.style.marginTop = '12px'; 
+      t.style.paddingTop = '12px';
+      t.style.borderTop = '1px solid rgba(255, 255, 255, 0.2)';
+      t.innerHTML = `
+        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+          <span>Mezisoučet:</span>
+          <span>${EUR.format(total)}</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+          <span>DPH (21%):</span>
+          <span>${EUR.format(total * 0.21)}</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 1.1em;">
+          <span>${translations[currentLang].total || 'CELKEM'}:</span>
+          <span>${EUR.format(total * 1.21)}</span>
+        </div>
+      `; 
+      wrap.appendChild(t);
+      
+      // Add remove item functionality
+      document.querySelectorAll('.remove-item').forEach(button => {
+        button.addEventListener('click', () => {
+          const index = parseInt(button.getAttribute('data-index'));
+          cart.splice(index, 1);
+          countEl.textContent = cart.length;
+          renderCart();
+        });
+      });
+    }
+    
+    document.querySelectorAll('.add').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        cart.push({name:btn.dataset.name, price:+btn.dataset.price});
+        countEl.textContent = cart.length;
+        btn.textContent = translations[currentLang].added || 'Přidáno ✓';
+        setTimeout(()=>btn.textContent=translations[currentLang].addToCart || 'Přidat',1200);
+      });
+    });
+    
+    const checkoutModal = document.getElementById('checkoutModal');
+    document.getElementById('openCheckout').addEventListener('click', ()=>{ renderCart(); checkoutModal.classList.add('show'); });
+    document.getElementById('closeCheckout').addEventListener('click', ()=> checkoutModal.classList.remove('show'));
+    
+    // Stripe payment
+    const stripe = Stripe('pk_test_51234567890'); // Replace with your publishable key
+    
+    document.getElementById('payStripe').addEventListener('click', async () => {
+      if(cart.length === 0) {
+        alert(translations[currentLang].emptyCart || 'Košík je prázdný');
+        return;
+      }
+      
+      // Create a payment intent on your server and return the client secret
+      const response = await fetch('/create-payment-intent', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items: cart })
+      });
+      
+      const { client_secret } = await response.json();
+      
+      // Confirm the payment on the client
+      const result = await stripe.confirmCardPayment(client_secret, {
+        payment_method: {
+          card: cardElement,
+          billing_details: {
+            name: 'Jméno Příjmení',
+          },
+        }
+      });
+      
+      if (result.error) {
+        console.error(result.error.message);
+      } else {
+        // Payment succeeded
+        console.log('Payment succeeded!');
+        generatePDFVoucher();
+        
+        // Clear cart after successful payment
+        setTimeout(() => { 
+          cart.length = 0;
+          countEl.textContent = '0';
+          checkoutModal.classList.remove('show'); 
+        }, 2000);
+      }
+    });
+    
+    function generatePDFVoucher() {
+      // This would typically be done server-side
+      // For demo purposes, we'll just show an alert
+      alert('PDF voucher would be generated and downloaded here.');
+    }
+    
+    /* ===== Contact form (demo) ===== */
+    const form = document.getElementById('contactForm'), note = document.getElementById('formNote');
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault(); 
+      const email = form.email.value || 'zadaný kontakt';
+      note.innerHTML = `<div class="success-message">${translations[currentLang].formSuccess || 'Děkujeme! Ozveme se na '} ${email}.</div>`; 
+      form.reset();
+      
+      // Track lead
+      trackLead();
+    });
+    
+    /* ===== Chatbot ===== */
+    const chatFab = document.getElementById('chatFab'), chatPanel = document.getElementById('chatPanel'), chatClose = document.getElementById('chatClose');
+    chatFab.addEventListener('click', ()=> chatPanel.classList.toggle('show'));
+    chatClose.addEventListener('click', ()=> chatPanel.classList.remove('show'));
+    
+    // Step navigation
+    const nextButtons = document.querySelectorAll('.next-step');
+    const prevButtons = document.querySelectorAll('.prev-step');
+    const submitButton = document.querySelector('.submit-lead');
+    const restartButton = document.querySelector('.restart-chat');
+    
+    nextButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const nextStep = button.getAttribute('data-next');
+        showStep(nextStep);
+      });
+    });
+    
+    prevButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const prevStep = button.getAttribute('data-prev');
+        showStep(prevStep);
+      });
+    });
+    
+    submitButton.addEventListener('click', () => {
+      // Collect form data
+      const leadData = {
+        destination: document.getElementById('bPlace').value,
+        fromDate: document.getElementById('bFrom').value,
+        toDate: document.getElementById('bTo').value,
+        people: document.getElementById('bPeople').value,
+        budget: document.getElementById('bBudget').value,
+        name: document.getElementById('bName').value,
+        email: document.getElementById('bEmail').value,
+        phone: document.getElementById('bPhone').value
+      };
+      
+      // Validate required fields
+      if (!leadData.name || !leadData.email) {
+        alert(translations[currentLang].formError || 'Vyplňte prosím povinná pole');
+        return;
+      }
+      
+      // Send data to server
+      fetch('/api/leads', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(leadData)
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          showStep(5);
+          
+          // Send auto-email
+          sendAutoEmail(leadData);
+          
+          // Create WhatsApp deep link
+          const whatsappLink = `https://wa.me/420731473473?text=${encodeURIComponent(
+            `Dobrý den, mám zájem o zájezd do ${leadData.destination} v termínu ${leadData.fromDate} - ${leadData.toDate} pro ${leadData.people} osob. Můj rozpočet je ${leadData.budget} EUR. Kontaktujte mě prosím na ${leadData.email} nebo ${leadData.phone}.`
+          )}`;
+          
+          // Show WhatsApp link after a delay
+          setTimeout(() => {
+            const whatsappBtn = document.createElement('a');
+            whatsappBtn.href = whatsappLink;
+            whatsappBtn.target = '_blank';
+            whatsappBtn.className = 'btn whatsapp';
+            whatsappBtn.innerHTML = '<i class="fa-brands fa-whatsapp"></i> Pokračovat na WhatsApp';
+            document.querySelector('#step5 .success-message').appendChild(whatsappBtn);
+          }, 2000);
+          
+          // Track lead
+          trackLead();
+        } else {
+          alert(translations[currentLang].submitError || 'Chyba při odesílání. Zkuste to prosím znovu.');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert(translations[currentLang].submitError || 'Chyba při odesílání. Zkuste to prosím znovu.');
+      });
+    });
+    
+    restartButton.addEventListener('click', () => {
+      // Reset form
+      document.getElementById('bPlace').value = '';
+      document.getElementById('bFrom').value = '';
+      document.getElementById('bTo').value = '';
+      document.getElementById('bPeople').value = '2';
+      document.getElementById('bBudget').value = '';
+      document.getElementById('bName').value = '';
+      document.getElementById('bEmail').value = '';
+      document.getElementById('bPhone').value = '';
+      
+      // Go back to first step
+      showStep(1);
+    });
+    
+    function showStep(stepNumber) {
+      // Hide all steps
+      document.querySelectorAll('.chat-step').forEach(step => {
+        step.classList.remove('active');
+      });
+      
+      // Show current step
+      document.getElementById(`step${stepNumber}`).classList.add('active');
+    }
+    
+    function sendAutoEmail(data) {
+      // This would typically be done server-side
+      // For demo purposes, we'll just log it
+      console.log('Auto-email would be sent to:', data.email);
+      console.log('With content:', `Dobrý den ${data.name},\n\nDěkujeme za Váš zájem o zájezd do ${data.destination}. Ozveme se Vám v nejbližším možném termínu s nabídkou na míru.\n\nS pozdravem,\nKing House Travel`);
+    }
+    
+    /* ===== Newsletter form ===== */
+    const newsletterForm = document.getElementById('newsletterForm');
+    const newsletterMessage = document.getElementById('newsletterMessage');
+    
+    newsletterForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const formData = new FormData(newsletterForm);
+      const email = formData.get('newsletterEmail');
+      
+      // Simulate form submission
+      newsletterMessage.innerHTML = '<div class="success-message">Děkujeme za přihlášení k odběru!</div>';
+      newsletterForm.reset();
+    });
+    
+    /* ===== FAQ Accordion ===== */
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      
+      question.addEventListener('click', () => {
+        // Toggle active class
+        item.classList.toggle('active');
+        
+        // Close other items
+        faqItems.forEach(otherItem => {
+          if (otherItem !== item && otherItem.classList.contains('active')) {
+            otherItem.classList.remove('active');
+          }
+        });
+      });
+    });
+    
+    /* ===== Social Tabs ===== */
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const tabId = button.getAttribute('data-tab');
+        
+        // Remove active class from all buttons and contents
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+        
+        // Add active class to clicked button and corresponding content
+        button.classList.add('active');
+        document.getElementById(tabId).classList.add('active');
+      });
+    });
+    
+    /* ===== Year ===== */
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    /* ===== MUSIC AUTOPLAY with gesture fallback ===== */
+    const audio = document.getElementById('bgAudio');
+    const tip = document.getElementById('musicTip');
+    const musicToggle = document.getElementById('musicToggle');
+    let isPlaying = false;
+    
+    audio.volume = 0.6;
+    
+    // Initialize music button state
+    musicToggle.innerHTML = '<i class="fa-solid fa-music"></i>';
+    
+    // Music toggle functionality
+    musicToggle.addEventListener('click', () => {
+      if (isPlaying) {
+        audio.pause();
+        musicToggle.innerHTML = '<i class="fa-solid fa-music"></i>';
+        isPlaying = false;
+      } else {
+        audio.play().catch(e => console.log("Autoplay prevented:", e));
+        musicToggle.innerHTML = '<i class="fa-solid fa-pause"></i>';
+        isPlaying = true;
+      }
+      
+      // Save music state to localStorage
+      localStorage.setItem('musicState', isPlaying);
+    });
+    
+    // Check for saved music state on page load
+    const musicState = localStorage.getItem('musicState') === 'true';
+    if (musicState) {
+      audio.play().catch(e => console.log("Autoplay prevented:", e));
+      musicToggle.innerHTML = '<i class="fa-solid fa-pause"></i>';
+      isPlaying = true;
+    }
+    
+    // Initial play attempt with fallback
+    audio.play().catch(()=>{
+      tip.classList.add('show');
+      const enable = ()=>{
+        audio.play().finally(()=> tip.classList.remove('show'));
+        musicToggle.innerHTML = '<i class="fa-solid fa-pause"></i>';
+        isPlaying = true;
+        window.removeEventListener('pointerdown', enable);
+        window.removeEventListener('keydown', enable);
+      };
+      window.addEventListener('pointerdown', enable, {once:true});
+      window.addEventListener('keydown', enable, {once:true});
+    });
+    
+    // Update music button when audio ends
+    audio.addEventListener('ended', () => {
+      musicToggle.innerHTML = '<i class="fa-solid fa-music"></i>';
+      isPlaying = false;
+    });
+    
+    /* ===== GOLDEN MOUSE TRAIL ===== */
+    const mouseTrail = document.getElementById('mouseTrail');
+    let mouseX = 0, mouseY = 0;
+    let trailX = 0, trailY = 0;
+    
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      mouseTrail.style.opacity = '0.7';
+    });
+    
+    function animateTrail() {
+      // Smooth movement of the trail following the cursor
+      trailX += (mouseX - trailX) * 0.1;
+      trailY += (mouseY - trailY) * 0.1;
+      
+      mouseTrail.style.left = `${trailX}px`;
+      mouseTrail.style.top = `${trailY}px`;
+      
+      requestAnimationFrame(animateTrail);
+    }
+    
+    animateTrail();
+    
+    // Hide trail when mouse stops moving
+    let trailTimeout;
+    document.addEventListener('mousemove', () => {
+      clearTimeout(trailTimeout);
+      trailTimeout = setTimeout(() => {
+        mouseTrail.style.opacity = '0';
+      }, 1000);
+    });
+    
+    /* ===== TRANSLATION FUNCTIONALITY ===== */
+    const translations = {
+      cz: {
+        home: "Domů",
+        services: "Služby",
+        tours: "Zájezdy",
+        wellness: "Wellness",
+        reviews: "Recenze",
+        blog: "Blog",
+        contact: "Kontakt",
+        terms: "Obchodní podmínky",
+        privacy: "GDPR/Privacy",
+        cookies: "Cookies",
+        complaints: "Reklamační řád",
+        heroTitle: "Objevte svět s námi",
+        heroSubtitle: "Nezapomenutelné cesty, wellness a city-breaky. Profesionální servis od výběru po platbu.",
+        viewTours: "Prohlédnout zájezdy",
+        contactUs: "Kontaktovat",
+        toursCount: "Spokojených hostů v EU",
+        countriesCount: "Destinací",
+        clientsCount: "Roku založení",
+        experienceYears: "Hodnocení na Google",
+        servicesTitle: "Naše služby",
+        servicesSubtitle: "Kompletní servis: výběr, rezervace, víza, pojištění, transfery, výlety.",
+        service1Title: "Individuální cesty",
+        service1Desc: "Trasy na míru vašemu stylu a rozpočtu.",
+        service2Title: "Rezervace hotelů",
+        service2Desc: "Prověření partneři a resorty.",
+        service3Title: "Lety a pojištění",
+        service3Desc: "Optimální lety + cestovní pojištění.",
+        moreInfo: "Více",
+        toursTitle: "Oblíbené zájezdy",
+        toursSubtitle: "Vyberte si vysněný zájezd — od city-breaku po wellness dovolenou.",
+        tour1Title: "Romantická Paříž",
+        tour1Desc: "3 dny / 2 noci • 2–4 osoby",
+        tour2Title: "Maledivy — water villas",
+        tour2Desc: "7 dní / 6 nocí • 2 osoby",
+        tour3Title: "Dubaj — orientální pohádky",
+        tour3Desc: "5 dní / 4 noci • 2–6 osob",
+        includes: "Zahrnuje:",
+        excludes: "Nezahrnuje:",
+        addToCart: "Přidat",
+        added: "Přidáno ✓",
+        reviewsTitle: "Hodnocení klientů",
+        blogTitle: "Náš blog",
+        blogSubtitle: "Užitečné tipy, příběhy a novinky ze světa cestování",
+        blog1Title: "Top 10 míst na léto v Evropě",
+        blog1Desc: "Od Středomoří po Alpy — výběr must-see.",
+        blog2Title: "Jak sbalit kufr bez přetížení",
+        blog2Desc: "Seznam must-have + organizační triky.",
+        blog3Title: "Nej pláže pro dokonalý relax",
+        blog3Desc: "Maledivy, Karibik a tajné spoty.",
+        readMore: "Číst dál",
+        contactTitle: "Kontaktujte nás",
+        contactSubtitle: "Pište nebo volejte — rychle odpovíme a pomůžeme s výběrem.",
+        address: "Adresa",
+        phone: "Telefon",
+        email: "Email",
+        openingHours: "Otevírací doba",
+        hours: "Po–Pá: 09:00–18:00 • So: 10:00–15:00",
+        yourName: "Vaše jméno",
+        topic: "Téma",
+        selectTopic: "Vyberte téma",
+        bookingTopic: "Rezervace zájezdu",
+        infoTopic: "Informace o zájezdech",
+        cooperationTopic: "Spolupráce",
+        otherTopic: "Jiné",
+        message: "Zpráva",
+        sendMessage: "Odeslat zprávu",
+        formSuccess: "Děkujeme! Ozveme se na ",
+        pages: "Stránky",
+        legal: "Právní informace",
+        contacts: "Kontakty",
+        footerDesc: "Exkluzivní cesty, wellness retreaty a městské víkendy. Základna — Brno, Česko.",
+        copyright: "© ",
+        emptyCart: "Košík je prázdný",
+        total: "CELKEM",
+        checkoutTitle: "Dokončení objednávky",
+        cardPayment: "Platba kartou",
+        securePayment: "Zabezpečená platba přes Stripe",
+        payButton: "Zaplatit",
+        otherPayment: "Další způsoby",
+        paymentDesc: "Můžete zaplatit přes PayPal nebo SEPA bankovním převodem v EUR.",
+        paypalRequest: "Vyžádat PayPal fakturu",
+        invoiceRequest: "Napište nám pro vystavení faktury s údaji.",
+        cryptoPayment: "USDT TRC20 (volitelné)",
+        destination: "Kam chcete jet?",
+        from: "Od",
+        to: "Do",
+        people: "Osob",
+        budget: "Rozpočet (€)",
+        wishes: "Přání",
+        chatMessage: "Dobrý den! Chci zájezd.",
+        contactInfo: "Kontakt",
+        quickContacts: "Rychlé kontakty",
+        wellnessTitle: "Wellness a Longevity Retreats",
+        wellnessSubtitle: "Naše specializované programy pro regeneraci těla i mysli",
+        wellnessIntro: "King House Travel je organizátorem exkluzivních wellness pobytů v partnerských klinikách a hotelech po celé Evropě. Naše programy jsou zaměřeny na komplexní regeneraci, detoxikaci a anti-age protokoly pod vedením odborníků.",
+        medicalDisclaimer: "Upozornění: Všechny zdravotní procedury jsou prováděny pod dohledem kvalifikovaných lékařů a specialistů. Výsledky se mohou lišit u jednotlivých klientů.",
+        detoxProgram: "Detox & Diagnostics",
+        detoxDesc: "7-denní program s komplexní diagnostikou, detoxikací organismu a výživovým poradenstvím.",
+        antiAgeProgram: "Anti-Age & Hormonal Balance",
+        antiAgeDesc: "14-denní program zaměřený na hormonální optimalizaci a anti-age protokoly.",
+        mentalWellnessProgram: "Mental Wellness & Stress Relief",
+        mentalWellnessDesc: "7-denní program pro duševní regeneraci a snížení stresu.",
+        viewDetails: "Detaily",
+        partnersTitle: "Partnerské kliniky a hotely",
+        partnersSubtitle: "Spolupracujeme pouze s prověřenými partnery nejvyšší kvality",
+        partner1Desc: "Prémiová klinika specializovaná na preventivní medicínu a anti-age terapie v srdci Prahy.",
+        partner2Desc: "5* luxusní hotel s vlastním wellness centrem v rakouských Alpách.",
+        partner3Desc: "Moderní zdravotní centrum na Krétě specializované na detox a výživové programy.",
+        faqTitle: "Často kladené otázky",
+        faqVisaQuestion: "Potřebuji vízum pro cestu?",
+        faqVisaAnswer: "Záleží na destinaci. Pro země EU/EHP nepotřebujete vízum, ale platný občanský průkaz nebo cestovní pas. Pro mimoevropské země vám pomůžeme s vyřízením víza. Všechny informace o vízové povinnosti najdete u konkrétního zájezdu.",
+        faqInsuranceQuestion: "Je v ceně zahrnuto cestovní pojištění?",
+        faqInsuranceAnswer: "Základní cestovní pojištění není v ceně zájezdu automaticky zahrnuto, ale můžete si jej přiobjednat během rezervace. Doporučujeme komplexní pojištění, které kryje léčebné výlohy, storno poplatky a případnou repatriaci.",
+        faqCancellationQuestion: "Jaké jsou podmínky zrušení rezervace?",
+        faqCancellationAnswer: "Podmínky zrušení se liší podle typu zájezdu a času do odjezdu. Obecně platí, že při zrušení více než 30 dní před odjezdem je storno poplatek 10% z ceny zájezdu, při zrušení 14-30 dní před odjezdem 30% a při zrušení méně než 14 dní před odjezdem 50-100% z ceny zájezdu. Doporučujeme uzavřít storno pojištění.",
+        faqPaymentQuestion: "Je možné platit na splátky?",
+        faqPaymentAnswer: "Ano, u zájezdů s hodnotou nad 1 500 € nabízíme možnost platby na 2-3 splátky. První splátka ve výši 50% je splatná při rezervaci, druhá splátka 30 dní před odjezdem. Případná třetí splátka je splatná 14 dní před odjezdem. Tato služba je zpoplatněna poplatkem 5% z celkové ceny zájezdu.",
+        faqRefundQuestion: "Jak probíhá vrácení peněz při zruření zájezdu ze strany CK?",
+        faqRefundAnswer: "V případě, že cestovní kancelář zruší zájezd, máte nárok na 100% vrácení zaplacené částky. Peníze vrátíme na stejný účet, ze kterého přišla platba, a to nejpozději do 14 dní od zrušení zájezdu. Pokud jste si zakoupili i letenky, pomůžeme vám s jejich vrácením nebo změnou.",
+        newsletterTitle: "Získejte exkluzivní nabídky",
+        newsletterDesc: "Přihlaste se k odběru našeho newsletteru a získejte slevu 10 € na první rezervaci a pravidelné informace o nových zájezdech a speciálních nabídkách.",
+        newsletterBenefit1: "Sleva 10 € na první nákup",
+        newsletterBenefit2: "Zdarma katalog zájezdů PDF",
+        newsletterBenefit3: "Informace o first-minute nabídkách",
+        newsletterSubscribe: "Přihlásit k odběru",
+        socialProofTitle: "Naši klienti na cestách",
+        successTitle: "Děkujeme za Váš zájem!",
+        successMessage: "Ozveme se Vám v nejbližším možném termínu s nabídkou na míru.",
+        freeConsultation: "Bezplatná konzultace 15 min",
+        formError: "Vyplňte prosím povinná pole",
+        submitError: "Chyba při odesílání. Zkuste to prosím znovu.",
+        when: "Kdy?",
+        details: "Detaily"
+      },
+      de: {
+        home: "Startseite",
+        services: "Dienstleistungen",
+        tours: "Reisen",
+        wellness: "Wellness",
+        reviews: "Bewertungen",
+        blog: "Blog",
+        contact: "Kontakt",
+        terms: "Geschäftsbedingungen",
+        privacy: "GDPR/Datenschutz",
+        cookies: "Cookies",
+        complaints: "Reklamation",
+        heroTitle: "Entdecken Sie die Welt mit uns",
+        heroSubtitle: "Unvergessliche Reisen, Wellness und Städtereisen. Professioneller Service von Auswahl bis Zahlung.",
+        viewTours: "Reisen ansehen",
+        contactUs: "Kontaktieren Sie uns",
+        toursCount: "Zufriedene Gäste in der EU",
+        countriesCount: "Reiseziele",
+        clientsCount: "Seit Gründung",
+        experienceYears: "Google-Bewertung",
+        servicesTitle: "Unsere Dienstleistungen",
+        servicesSubtitle: "Komplettservice: Auswahl, Buchung, Visa, Versicherung, Transfers, Ausflüge.",
+        service1Title: "Individuelle Reisen",
+        service1Desc: "Reiserouten nach Ihrem Stil und Budget.",
+        service2Title: "Hotelpreise",
+        service2Desc: "Verifizierte Partner und Resorts.",
+        service3Title: "Flüge und Versicherung",
+        service3Desc: "Optimale Flüge + Reiseversicherung.",
+        moreInfo: "Mehr",
+        toursTitle: "Beliebte Reisen",
+        toursSubtitle: "Wählen Sie Ihren Traumurlaub — vom Städteurlaub bis zum Wellness-Urlaub.",
+        tour1Title: "Romantisches Paris",
+        tour1Desc: "3 Tage / 2 Nächte • 2–4 Personen",
+        tour2Title: "Malediven — Wasser-Villen",
+        tour2Desc: "7 Tage / 6 Nächte • 2 Personen",
+        tour3Title: "Dubai — orientalische Märchen",
+        tour3Desc: "5 Tage / 4 Nächte • 2–6 Personen",
+        includes: "Enthalten:",
+        excludes: "Nicht enthalten:",
+        addToCart: "Hinzufügen",
+        added: "Hinzugefügt ✓",
+        reviewsTitle: "Kundenbewertungen",
+        blogTitle: "Unser Blog",
+        blogSubtitle: "Nützliche Tipps, Geschichten und Neuigkeiten aus der Reisewelt",
+        blog1Title: "Top 10 Sommerziele in Europa",
+        blog1Desc: "Vom Mittelmeer bis zu den Alpen — eine Auswahl der Must-Sees.",
+        blog2Title: "Wie man den Koffer ohne Überladung packt",
+        blog2Desc: "Must-Have-Liste + Organisationstipps.",
+        blog3Title: "Beste Strände für perfekte Entspannung",
+        blog3Desc: "Malediven, Karibik und geheime Orte.",
+        readMore: "Weiterlesen",
+        contactTitle: "Kontaktieren Sie uns",
+        contactSubtitle: "Schreiben oder rufen Sie an — wir antworten schnell und helfen bei Ihrer Auswahl.",
+        address: "Adresse",
+        phone: "Telefon",
+        email: "E-Mail",
+        openingHours: "Öffnungszeiten",
+        hours: "Mo–Fr: 09:00–18:00 • Sa: 10:00–15:00",
+        yourName: "Ihr Name",
+        topic: "Thema",
+        selectTopic: "Thema auswählen",
+        bookingTopic: "Reisebuchung",
+        infoTopic: "Reiseinformationen",
+        cooperationTopic: "Zusammenarbeit",
+        otherTopic: "Andere",
+        message: "Nachricht",
+        sendMessage: "Nachricht senden",
+        formSuccess: "Danke! Wir werden uns bei ",
+        pages: "Seiten",
+        legal: "Rechtliche Informationen",
+        contacts: "Kontakte",
+        footerDesc: "Exklusive Reisen, Wellness-Retreats und Stadtwochenenden. Basis — Brünn, Tschechien.",
+        copyright: "© ",
+        emptyCart: "Warenkorb ist leer",
+        total: "SUMME",
+        checkoutTitle: "Bestellung abschließen",
+        cardPayment: "Kartenzahlung",
+        securePayment: "Sichere Zahlung über Stripe",
+        payButton: "Bezahlen",
+        otherPayment: "Andere Zahlungsmethoden",
+        paymentDesc: "Sie können über PayPal oder per SEPA-Überweisung in EUR bezahlen.",
+        paypalRequest: "PayPal-Rechnung anfordern",
+        invoiceRequest: "Schreiben Sie uns für die Ausstellung einer Rechnung mit Angaben.",
+        cryptoPayment: "USDT TRC20 (optional)",
+        destination: "Wohin möchten Sie reisen?",
+        from: "Von",
+        to: "Bis",
+        people: "Personen",
+        budget: "Budget (€)",
+        wishes: "Wünsche",
+        chatMessage: "Hallo! Ich möchte eine Reise buchen.",
+        contactInfo: "Kontakt",
+        quickContacts: "Schnellkontakte",
+        wellnessTitle: "Wellness und Longevity Retreats",
+        wellnessSubtitle: "Unsere spezialisierten Programme für die Regeneration von Körper und Geist",
+        wellnessIntro: "King House Travel ist Organisator exklusiver Wellness-Aufenthalte in Partnerkliniken und Hotels in ganz Europa. Unsere Programme konzentrieren sich auf eine umfassende Regeneration, Entgiftung und Anti-Aging-Protokolle unter der Leitung von Experten.",
+        medicalDisclaimer: "Hinweis: Alle Gesundheitsverfahren werden unter Aufsicht qualifizierter Ärzte und Spezialisten durchgeführt. Die Ergebnisse können von Kunde zu Kunde variieren.",
+        detoxProgram: "Detox & Diagnostik",
+        detoxDesc: "7-Tage-Programm mit umfassender Diagnostik, Körperentgiftung und Ernährungsberatung.",
+        antiAgeProgram: "Anti-Aging & Hormonbalance",
+        antiAgeDesc: "14-Tage-Programm mit Fokus auf Hormonoptimierung und Anti-Aging-Protokolle.",
+        mentalWellnessProgram: "Mental Wellness & Stressabbau",
+        mentalWellnessDesc: "7-Tage-Programm zur mentalen Regeneration und Stressreduzierung.",
+        viewDetails: "Details",
+        partnersTitle: "Partnerkliniken und Hotels",
+        partnersSubtitle: "Wir arbeiten nur mit verifizierten Partnern höchster Qualität zusammen",
+        partner1Desc: "Premium-Klinik spezialisiert auf Präventivmedizin und Anti-Aging-Therapien im Herzen von Prag.",
+        partner2Desc: "5* Luxushotel mit eigenem Wellnesszentrum in den österreichischen Alpen.",
+        partner3Desc: "Modernes Gesundheitszentrum auf Kreta, spezialisiert auf Detox- und Ernährungsprogramme.",
+        faqTitle: "Häufig gestellte Fragen",
+        faqVisaQuestion: "Brauche ich ein Visum für die Reise?",
+        faqVisaAnswer: "Es kommt auf das Reiseziel an. Für EU/EWR-Länder benötigen Sie kein Visum, sondern einen gültigen Personalausweis oder Reisepass. für außereuropäische Länder helfen wir Ihnen bei der Beschaffung eines Visums. Alle Informationen zu Visumpflichten finden Sie bei der jeweiligen Reise.",
+        faqInsuranceQuestion: "Ist Reisesicherung inbegriffen?",
+        faqInsuranceAnswer: "Die Grund-Reiseversicherung ist nicht automatisch im Reisepreis enthalten, kann aber bei der Buchung optional gebucht werden. Wir empfehlen eine umfassende Versicherung, die Behandlungskosten, Stornogebühren und eventuelle Repatriierung abdeckt.",
+        faqCancellationQuestion: "Was sind die Stornierungsbedingungen?",
+        faqCancellationAnswer: "Die Stornierungsbedingungen variieren je nach Reisetyp und Zeit bis zur Abreise. Generell gilt: Bei Stornierung mehr als 30 Tage vor Abreise beträgt die Stornogebühr 10% des Reisepreises, bei Stornierung 14-30 Tage vor Abreise 30% und bei Stornierung weniger als 14 Tage vor Abreise 50-100% des Reisepreises. Wir empfehlen den Abschluss einer Stornoversicherung.",
+        faqPaymentQuestion: "Ist eine Ratenzahlung möglich?",
+        faqPaymentAnswer: "Ja, bei Reisen mit einem Wert über 1.500 € bieten wir die Möglichkeit der Zahlung in 2-3 Raten an. Die erste Rate in Höhe von 50% ist bei Buchung fällig, die zweite Rate 30 Tage vor Abreise. Eine eventuelle dritte Rate ist 14 Tage vor Abreise fällig. Dieser Service ist mit einer Gebühr von 5% des Gesamtreisepreises verbunden.",
+        faqRefundQuestion: "Wie erfolgt die Rückerstattung bei Stornierung der Reise durch das Reisebüro?",
+        faqRefundAnswer: "Falls das Reisebüro die Reise storniert, haben Sie Anspruch auf 100% Rückerstattung des gezahlten Betrags. Wir erstatten den Betrag auf dasselbe Konto, von dem die Zahlung erfolgte, und zwar spätestens 14 Tage nach Stornierung der Reise. Falls Sie auch Flugtickets gekauft haben, helfen wir Ihnen bei der Rückerstattung oder Änderung.",
+        newsletterTitle: "Exklusive Angebote erhalten",
+        newsletterDesc: "Melden Sie sich für unseren Newsletter an und erhalten Sie 10 € Rabatt auf die erste Buchung und regelmäßige Informationen über neue Reisen und Sonderangebote.",
+        newsletterBenefit1: "10 € Rabatt auf den ersten Kauf",
+        newsletterBenefit2: "Kostenloser Reisekatalog PDF",
+        newsletterBenefit3: "Informationen über First-Minute-Angebote",
+        newsletterSubscribe: "Anmelden",
+        socialProofTitle: "Unsere Kunden auf Reisen",
+        successTitle: "Vielen Dank für Ihr Interesse!",
+        successMessage: "Wir melden uns in Kürze bei Ihnen mit einem maßgeschneiderten Angebot.",
+        freeConsultation: "Kostenlose 15-minütige Beratung",
+        formError: "Bitte füllen Sie die Pflichtfelder aus",
+        submitError: "Fehler beim Senden. Bitte versuchen Sie es später erneut.",
+        when: "Wann?",
+        details: "Details"
+      },
+      en: {
+        home: "Home",
+        services: "Services",
+        tours: "Tours",
+        wellness: "Wellness",
+        reviews: "Reviews",
+        blog: "Blog",
+        contact: "Contact",
+        terms: "Terms & Conditions",
+        privacy: "GDPR/Privacy",
+        cookies: "Cookies",
+        complaints: "Complaints",
+        heroTitle: "Discover the world with us",
+        heroSubtitle: "Unforgettable journeys, wellness and city breaks. Professional service from selection to payment.",
+        viewTours: "View tours",
+        contactUs: "Contact us",
+        toursCount: "Happy guests in EU",
+        countriesCount: "Destinations",
+        clientsCount: "Since founded",
+        experienceYears: "Google rating",
+        servicesTitle: "Our services",
+        servicesSubtitle: "Complete service: selection, booking, visas, insurance, transfers, excursions.",
+        service1Title: "Individual journeys",
+        service1Desc: "Routes tailored to your style and budget.",
+        service2Title: "Hotel reservations",
+        service2Desc: "Verified partners and resorts.",
+        service3Title: "Flights and insurance",
+        service3Desc: "Optimal flights + travel insurance.",
+        moreInfo: "More",
+        toursTitle: "Popular tours",
+        toursSubtitle: "Choose your dream tour — from city breaks to wellness holidays.",
+        tour1Title: "Romantic Paris",
+        tour1Desc: "3 days / 2 nights • 2–4 people",
+        tour2Title: "Maldives — water villas",
+        tour2Desc: "7 days / 6 nights • 2 people",
+        tour3Title: "Dubai — oriental tales",
+        tour3Desc: "5 days / 4 nights • 2–6 people",
+        includes: "Includes:",
+        excludes: "Excludes:",
+        addToCart: "Add",
+        added: "Added ✓",
+        reviewsTitle: "Customer reviews",
+        blogTitle: "Our blog",
+        blogSubtitle: "Useful tips, stories and news from the travel world",
+        blog1Title: "Top 10 summer destinations in Europe",
+        blog1Desc: "From the Mediterranean to the Alps — a selection of must-sees.",
+        blog2Title: "How to pack a suitcase without overloading",
+        blog2Desc: "Must-have list + organizational tricks.",
+        blog3Title: "Best beaches for perfect relaxation",
+        blog3Desc: "Maldives, Caribbean and secret spots.",
+        readMore: "Read more",
+        contactTitle: "Contact us",
+        contactSubtitle: "Write or call — we'll respond quickly and help with your selection.",
+        address: "Address",
+        phone: "Phone",
+        email: "Email",
+        openingHours: "Opening hours",
+        hours: "Mon–Fri: 09:00–18:00 • Sat: 10:00–15:00",
+        yourName: "Your name",
+        topic: "Topic",
+        selectTopic: "Select topic",
+        bookingTopic: "Tour booking",
+        infoTopic: "Tour information",
+        cooperationTopic: "Cooperation",
+        otherTopic: "Other",
+        message: "Message",
+        sendMessage: "Send message",
+        formSuccess: "Thank you! We will contact you at ",
+        pages: "Pages",
+        legal: "Legal information",
+        contacts: "Contacts",
+        footerDesc: "Exclusive journeys, wellness retreats and city weekends. Base — Brno, Czechia.",
+        copyright: "© ",
+        emptyCart: "Cart is empty",
+        total: "TOTAL",
+        checkoutTitle: "Complete order",
+        cardPayment: "Card payment",
+        securePayment: "Secure payment via Stripe",
+        payButton: "Pay",
+        otherPayment: "Other methods",
+        paymentDesc: "You can pay via PayPal or SEPA bank transfer in EUR.",
+        paypalRequest: "Request PayPal invoice",
+        invoiceRequest: "Write to us for issuing an invoice with details.",
+        cryptoPayment: "USDT TRC20 (optional)",
+        destination: "Where do you want to go?",
+        from: "From",
+        to: "To",
+        people: "People",
+        budget: "Budget (€)",
+        wishes: "Wishes",
+        chatMessage: "Hello! I want to book a tour.",
+        contactInfo: "Contact",
+        quickContacts: "Quick contacts",
+        wellnessTitle: "Wellness and Longevity Retreats",
+        wellnessSubtitle: "Our specialized programs for body and mind regeneration",
+        wellnessIntro: "King House Travel is the organizer of exclusive wellness stays in partner clinics and hotels throughout Europe. Our programs focus on comprehensive regeneration, detoxification and anti-aging protocols under the guidance of experts.",
+        medicalDisclaimer: "Note: All health procedures are performed under the supervision of qualified doctors and specialists. Results may vary among clients.",
+        detoxProgram: "Detox & Diagnostics",
+        detoxDesc: "7-day program with comprehensive diagnostics, body detoxification and nutritional counseling.",
+        antiAgeProgram: "Anti-Age & Hormonal Balance",
+        antiAgeDesc: "14-day program focused on hormonal optimization and anti-aging protocols.",
+        mentalWellnessProgram: "Mental Wellness & Stress Relief",
+        mentalWellnessDesc: "7-day program for mental regeneration and stress reduction.",
+        viewDetails: "Details",
+        partnersTitle: "Partner Clinics and Hotels",
+        partnersSubtitle: "We only work with verified partners of the highest quality",
+        partner1Desc: "Premium clinic specializing in preventive medicine and anti-aging therapies in the heart of Prague.",
+        partner2Desc: "5* luxury hotel with its own wellness center in the Austrian Alps.",
+        partner3Desc: "Modern health center in Crete, specializing in detox and nutrition programs.",
+        faqTitle: "Frequently Asked Questions",
+        faqVisaQuestion: "Do I need a visa for travel?",
+        faqVisaAnswer: "It depends on the destination. For EU/EEA countries, you don't need a visa, but a valid ID card or passport. For non-European countries, we will help you obtain a visa. All information about visa requirements can be found for each specific tour.",
+        faqInsuranceQuestion: "Is travel insurance included?",
+        faqInsuranceAnswer: "Basic travel insurance is not automatically included in the tour price, but can be optionally booked during reservation. We recommend comprehensive insurance that covers medical expenses, cancellation fees and possible repatriation.",
+        faqCancellationQuestion: "What are the cancellation conditions?",
+        faqCancellationAnswer: "Cancellation conditions vary depending on the type of tour and time until departure. Generally, if canceled more than 30 days before departure, the cancellation fee is 10% of the tour price, if canceled 14-30 days before departure 30%, and if canceled less than 14 days before departure 50-100% of the tour price. We recommend taking out cancellation insurance.",
+        faqPaymentQuestion: "Is installment payment possible?",
+        faqPaymentAnswer: "Yes, for tours with a value over 1,500 €, we offer the possibility of payment in 2-3 installments. The first installment of 50% is due upon booking, the second installment 30 days before departure. A possible third installment is due 14 days before departure. This service is subject to a fee of 5% of the total tour price.",
+        faqRefundQuestion: "How is the refund processed when the tour is canceled by the travel agency?",
+        faqRefundAnswer: "If the travel agency cancels the tour, you are entitled to a 100% refund of the paid amount. We will refund the amount to the same account from which the payment came, no later than 14 days after cancellation of the tour. If you have also purchased flight tickets, we will help you with their refund or change.",
+        newsletterTitle: "Get Exclusive Offers",
+        newsletterDesc: "Sign up for our newsletter and get a 10 € discount on your first booking and regular information about new tours and special offers.",
+        newsletterBenefit1: "10 € discount on first purchase",
+        newsletterBenefit2: "Free tour catalog PDF",
+        newsletterBenefit3: "Information about first-minute offers",
+        newsletterSubscribe: "Subscribe",
+        socialProofTitle: "Our Clients on the Road",
+        successTitle: "Thank you for your interest!",
+        successMessage: "We will contact you shortly with a tailored offer.",
+        freeConsultation: "Free 15-minute consultation",
+        formError: "Please fill in the required fields",
+        submitError: "Error sending. Please try again later.",
+        when: "When?",
+        details: "Details"
+      },
+      // Add more languages as needed...
+    };
+    
+    let currentLang = 'cz';
+    
+    // Language selector functionality
+    const languageSelect = document.getElementById('languageSelect');
+    const langButtons = document.querySelectorAll('.lang-btn');
+    
+    languageSelect.addEventListener('change', (e) => {
+      const selectedLang = e.target.value;
+      changeLanguage(selectedLang);
+      
+      // Update active language button
+      langButtons.forEach(btn => {
+        if (btn.dataset.lang === selectedLang) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+    });
+    
+    // Language button functionality
+    langButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const selectedLang = btn.dataset.lang;
+        changeLanguage(selectedLang);
+        
+        // Update language selector
+        languageSelect.value = selectedLang;
+        
+        // Update active button
+        langButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+    
+    function changeLanguage(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang;
+      
+      // Save language preference in localStorage
+      localStorage.setItem('preferredLanguage', lang);
+      
+      // Update all elements with data-translate attribute
+      document.querySelectorAll('[data-translate]').forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[lang] && translations[lang][key]) {
+          element.textContent = translations[lang][key];
+        }
+      });
+      
+      // Update form placeholders
+      const placeholders = {
+        name: translations[lang].yourName || "Vaše jméno",
+        email: "your@email.com",
+        phone: "+420 731 473 473",
+        msg: translations[lang].message || "Napište váš dotaz..."
+      };
+      
+      document.getElementById('name').placeholder = placeholders.name;
+      document.getElementById('email').placeholder = placeholders.email;
+      document.getElementById('phone').placeholder = placeholders.phone;
+      document.getElementById('msg').placeholder = placeholders.msg;
+      
+      // Update chatbot placeholders
+      const chatPlaceholders = {
+        bPlace: translations[lang].destination || "Kam chcete jet?",
+        bNotes: translations[lang].wishes || "Hotel 4*, wellness, výlety..."
+      };
+      
+      document.getElementById('bPlace').placeholder = chatPlaceholders.bPlace;
+      document.getElementById('bNotes').placeholder = chatPlaceholders.bNotes;
+      
+      // Update form options
+      const formOptions = {
+        topic: [
+          { value: "", text: translations[lang].selectTopic || "Vyberte téma" },
+          { value: "booking", text: translations[lang].bookingTopic || "Rezervace zájezdu" },
+          { value: "info", text: translations[lang].infoTopic || "Informace o zájezdech" },
+          { value: "cooperation", text: translations[lang].cooperationTopic || "Spolupráce" },
+          { value: "other", text: translations[lang].otherTopic || "Jiné" }
+        ]
+      };
+      
+      const topicSelect = document.getElementById('topic');
+      topicSelect.innerHTML = '';
+      formOptions.topic.forEach(option => {
+        const opt = document.createElement('option');
+        opt.value = option.value;
+        opt.textContent = option.text;
+        topicSelect.appendChild(opt);
+      });
+      
+      // Update cart if visible
+      if (checkoutModal.classList.contains('show')) {
+        renderCart();
+      }
+    }
+    
+    // Check for saved language preference on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedLanguage = localStorage.getItem('preferredLanguage') || 'cz';
+      changeLanguage(savedLanguage);
+      languageSelect.value = savedLanguage;
+      
+      // Update active language button
+      langButtons.forEach(btn => {
+        if (btn.dataset.lang === savedLanguage) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+    });
+    
+    // Add hreflang tags for SEO
+    function addHreflangTags() {
+      const head = document.head;
+      const languages = ['cz', 'de', 'en', 'it', 'uk'];
+      
+      languages.forEach(lang => {
+        const link = document.createElement('link');
+        link.rel = 'alternate';
+        link.hreflang = lang;
+        link.href = `https://kinghousetravel.cz/${lang === 'cz' ? '' : lang + '/'}`;
+        head.appendChild(link);
+      });
+    }
+    
+    addHreflangTags();
+    
+    /* ===== ANALYTICS ===== */
+    function trackLead() {
+      // Google Analytics 4
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'generate_lead', {
+          'event_category': 'engagement',
+          'event_label': 'Contact Form'
+        });
+      }
+      
+      // Meta Pixel
+      if (typeof fbq !== 'undefined') {
+        fbq('track', 'Lead');
+      }
+    }
+    
+    function trackStartCheckout() {
+      // Google Analytics 4
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'begin_checkout', {
+          'event_category': 'ecommerce',
+          'event_label': 'Checkout Started'
+        });
+      }
+      
+      // Meta Pixel
+      if (typeof fbq !== 'undefined') {
+        fbq('track', 'InitiateCheckout');
+      }
+    }
+    
+    function trackPurchase(value, currency) {
+      // Google Analytics 4
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'purchase', {
+          'event_category': 'ecommerce',
+          'event_label': 'Purchase Completed',
+          'value': value,
+          'currency': currency
+        });
+      }
+      
+      // Meta Pixel
+      if (typeof fbq !== 'undefined') {
+        fbq('track', 'Purchase', {
+          value: value,
+          currency: currency
+        });
+      }
+    }
+    
+    // Add tracking to checkout initiation
+    document.getElementById('openCheckout').addEventListener('click', () => {
+      trackStartCheckout();
+    });
+    
+    // Add tracking to successful purchase
+    document.getElementById('payStripe').addEventListener('click', async () => {
+      // ... existing payment processing code ...
+      
+      // If payment is successful, track the purchase
+      if (paymentSuccessful) {
+        const total = cart.reduce((sum, item) => sum + item.price, 0) * 1.21; // Including VAT
+        trackPurchase(total, 'EUR');
+      }
+    });
+  </script>
+</body>
+</html>
